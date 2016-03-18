@@ -206,6 +206,110 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/18/Codeforces-Round-345-Div-2-B-Beautiful-Paintings/" itemprop="url">
+                  Codeforces Round #345 (Div. 2) B. Beautiful Paintings
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-18T14:33:20+08:00" content="2016-03-18">
+              2016-03-18
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给一个整数序列，长度小于1000，每个元素元素小于1000大于1，把这个序列任意排序，使得相邻的两个数字满足$a[$i] &lt; $a[$i+1]的pair的个数最大。只需要输出最大的pair个数。</p>
+<hr>
+<p>其实画图可以很形象地说明问题。这些图都是用Emacs画的，挺有意思。</p>
+<p>首先统计出每个数字的个数。接下来：</p>
+<p>第一种思考角度如下图：</p>
+<p>从小到大比较相邻组的大小，把较小的那一组的大小累加起来，然而要不要累加较大的这一组的大小那就要看是不是有别的组的大小比它还要大。从下面的图的第2列和地5列可以看到这样的情况。因此还要记录一个最大值。</p>
+<p>这个角度从图里面看是从左往右。a -&gt; b -&gt; c -&gt; d这样的顺序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">							  +-----+</span><br><span class="line">							  |     |</span><br><span class="line">							  |  5  |</span><br><span class="line">		      +-----+				  +-----+</span><br><span class="line">		      |     |	  			  |     |   -----</span><br><span class="line">		      |  2  |				  |  5  |  ( o o )</span><br><span class="line">		      +-----+	  +-----+		  +-----+   --X--</span><br><span class="line">		      |     |	  |     |		  |     |    /|\</span><br><span class="line">		      |  2  |  b  |  3  | 		  |  5  |   / | \</span><br><span class="line">          +-----+     +-----+	  +-----+     +-----+	  +-----+  /  X	 \</span><br><span class="line">          |     |     |     |	  |     |     |     |	  |     |    / \</span><br><span class="line">          |  1  |  a  |  2  |  b  |  3  |  c  |  4  |  d  |  5  |   /	\</span><br><span class="line">----------+-----+-----+-----+-----+-----+-----+-----+-----+-----+--/-----\--</span><br></pre></td></tr></table></figure>
+<hr>
+<p>第二种思考方式如下图：</p>
+<p>第一种是从左往右，那么就可以从下往上。其实这样也是合理的。每次从一组里面取出最下面的一个，累加起来。a -&gt; b的顺序。</p>
+<p>不过这个方法实现的时候需要一点技巧。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">		      +-----+</span><br><span class="line">		      |     |		    			    -----</span><br><span class="line">		      |  2  |		    			   ( o o )</span><br><span class="line">		      +-----+	  +-----+   			    --X--</span><br><span class="line">		      |     |	  |     |   			     /|\</span><br><span class="line">		      |  2  |  b  |  3  |   			    / | \</span><br><span class="line">          +-----+     +-----+	  +-----+     +-----+		   /  X	 \</span><br><span class="line">          |     |     |     |	  |     |     |     |		     / \</span><br><span class="line">          |  1  |  a  |  2  |  a  |  3  |  a  |  4  |		    /	\</span><br><span class="line">----------+-----+-----+-----+-----+-----+-----+-----+--------------/-----\--</span><br></pre></td></tr></table></figure>
+<p>然而，最简单的做法还是这样：）</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$\ = $/;</span><br><span class="line"><span class="keyword">while</span> (&lt;&gt;) &#123;</span><br><span class="line">    $n = $_; $h-&gt;&#123;$_&#125;++ <span class="keyword">for</span> <span class="keyword">split</span> <span class="string">' '</span>, &lt;&gt;;</span><br><span class="line">    <span class="keyword">print</span> $n - (<span class="keyword">sort</span> &#123;$b &lt;=&gt; $a&#125; <span class="keyword">values</span> %&#123;$h&#125;)[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实画图有局限性，从另一个角度想，把数列分成尽可能长的严格递增（或者只含有一个元<br>素）的子序列，那么每一组一定会含有在整个序列中出现次数最多的那个数字X，如果某个<br>子序列不含有数字X，那么它不足够长。如果某个子序列含有两个数字X，那么它不是严格递<br>增。设整个序列长度为N，在序列中出现次数最多的数字X出现的次数为P，那么就可以分成P<br>个子序列。整个序列中，相邻两个数字递增的pair最多为N-1，分成P个子序列之后，相邻两<br>个数字递增的pair减少了P-1个，所以答案就是 <code>(N - 1) - (P - 1) = N - P</code>，也就是整<br>个序列的长度减去出现次数最多的数字出现的次数……</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/13/2016年春/" itemprop="url">
                   2016年新年
                 </a>
@@ -249,11 +353,11 @@
       
         
           
-            <p>这几天人机大战，李世乭0:3，看得很心疼。今天终于、终于赢了！</p>
+            <p>这几天人机大战，李世乭0:3，看得心疼……今天终于、终于赢了！</p>
 <p>这几天很多阴谋论，很多打脸，很多嘲讽，没关系，它们都会随风而去。然而，李世乭的今<br>天会被载入史册。</p>
 <hr>
 <p>新的一年，过得很快啊！转眼间，现在已经是3月13日了。这几天学习进度其实略慢。要看<br>的东西比较多：数值分析、高等数学、英语单词、Perl、具体数学、算法、计算机网络。</p>
-<p>一点一点努力吧～</p>
+<p>一点一点来吧～</p>
 
           
         
@@ -319,7 +423,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -329,7 +433,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
