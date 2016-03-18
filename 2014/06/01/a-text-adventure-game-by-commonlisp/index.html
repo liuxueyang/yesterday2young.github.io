@@ -1,0 +1,891 @@
+<!doctype html>
+<html class="theme-next use-motion">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.3.0rc5"/>
+
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.3.0rc5" />
+
+
+
+
+  <title> A Text Adventure Game by CommonLISP // wonders of the universe </title>
+</head>
+
+<body>
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+    <a href="/" class="brand">
+        <span class="logo">
+          <i class="icon-logo"></i>
+        </span>
+        <span class="site-title">wonders of the universe</span>
+    </a>
+</h1>
+
+
+  <ul id="menu" class="menu">
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首页
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          归档
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          标签
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+            
+          
+
+          <div id="posts" class="posts-expand">
+            
+  
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              A Text Adventure Game by CommonLISP
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+          <span class="post-time">
+            
+              发表于 2014-06-01
+            
+          </span>
+        
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          <p>Today, I read the book Land of Lisp.<br>It is interesting to write a text adventure game.</p>
+<hr>
+<p>First, there are some basic and useful functions.</p>
+<h2 id="some_useful_functions">some useful functions</h2><ol>
+<li><p><code>mapcar</code></p>
+<p> This function takes another function and a list, and then applies this function to every member of a list.This is an example:</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">mapcar</span> #<span class="quoted">'sqrt</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>)</span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>It will output <span class="operator">a</span> list <span class="operator">contains</span> <span class="operator">the</span> square root <span class="operator">of</span> <span class="keyword">each</span> <span class="keyword">element</span>. Besides, <span class="operator">the</span> code above is <span class="operator">the</span> same <span class="keyword">as</span>:
+
+&lt;!<span class="comment">--￼1--&gt;</span>
+
+
+Furthermore, there is <span class="operator">a</span> namespace problem here. For example:
+
+&lt;!<span class="comment">--￼2--&gt;</span>
+
+
+It will output (foo ba) <span class="keyword">as</span> expected. Here are <span class="constant">two</span> <span class="string">'car'</span>s. Because we prepended <span class="operator">the</span> <span class="keyword">second</span> <span class="string">'car'</span> <span class="operator">with</span> <span class="comment">#', there is no confusion about which car we are talking about.</span>
+
+Common Lisp tracks <span class="function"><span class="keyword">function</span> <span class="title">names</span> <span class="title">differently</span> <span class="title">from</span> <span class="title">variable</span> <span class="title">names</span>. <span class="title">It</span> <span class="title">has</span> <span class="title">multiple</span> <span class="title">namespaces</span>, <span class="title">including</span> <span class="title">one</span> <span class="title">for</span> <span class="title">variables</span> <span class="title">and</span> <span class="title">one</span> <span class="title">for</span> <span class="title">functions</span>. <span class="title">However</span>, <span class="title">in</span> <span class="title">Scheme</span>, <span class="title">there</span> <span class="title">is</span> <span class="title">only</span> <span class="title">namespace</span> <span class="title">for</span> <span class="title">functions</span> <span class="title">and</span> <span class="title">variables</span>.</span>
+</code></pre><ol>
+<li><p><code>append</code></p>
+<p> this function can join several lists into one big list:</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">append</span> <span class="quoted">'(liu)</span> <span class="quoted">'(xue)</span> <span class="quoted">'(yang)</span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>It will output:
+
+&gt;<span class="comment">(liu xue yang)</span>
+</code></pre><ol>
+<li><p><code>apply</code></p>
+<p> Sometimes, I will confuse this function with the <code>mapcar</code>. You pass the <code>apply</code> a function and a list of objects, and it pretends that the items in the list are separate objects and passes them to the given function as such.</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">apply</span> #<span class="quoted">'append</span> <span class="quoted">'((are) (you) (sad))</span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>This will output:
+
+&gt;<span class="comment">(are you sad)</span>
+</code></pre><ol>
+<li><p><code>assoc</code></p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defparameter</span> <span class="variable">*letter-list*</span></span><br><span class="line">	<span class="quoted">'((a (This is letter a))</span><br><span class="line">		(b (This is letter b))</span><br><span class="line">		(a (This is the second letter a)))</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">assoc</span> <span class="quoted">'a</span> <span class="variable">*letter-list*</span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>This wil output:
+
+&gt;(<span class="operator">a</span> (This is letter <span class="operator">a</span>))
+
+Notice that <span class="keyword">it</span> will **ONLY** returns <span class="operator">the</span> <span class="keyword">first</span> <span class="keyword">item</span> <span class="keyword">it</span> finds <span class="operator">in</span> <span class="operator">a</span> list. This is very useful <span class="operator">in</span> future. (such <span class="keyword">as</span> when we push <span class="constant">two</span> objects <span class="keyword">into</span> <span class="constant">one</span> list, we will only <span class="built_in">get</span> <span class="operator">the</span> newer <span class="constant">one</span> <span class="keyword">as</span> <span class="keyword">if</span> we <span class="built_in">replace</span> <span class="operator">the</span> old <span class="constant">one</span> <span class="operator">with</span> <span class="operator">the</span> newer <span class="constant">one</span>.)
+</code></pre><ol>
+<li><p><code>push</code> </p>
+<p> the <code>push</code> command simply adds a new item to the front of a list variable’s list. For example:</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defparameter</span> <span class="variable">*foo*</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">push</span> <span class="number">73</span> <span class="variable">*foo*</span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>It will output:
+
+&gt;<span class="comment">(73 1 2 3)</span>
+</code></pre><ol>
+<li><p><code>find</code></p>
+<p> this function searches a list for an item, then return that found item. For example:</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">find</span> <span class="number">1</span> <span class="quoted">'(<span class="number">4</span> <span class="number">5</span> <span class="number">1</span>)</span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>It will output:
+
+&gt;1
+
+Besides, in Common Lisp, many functions have built-in freatures that can be accessed by passing in special parameters at the end of the function call. For example:
+
+<span class="comment"><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">find</span> <span class="quoted">'y</span> <span class="quoted">'((<span class="number">1</span> x) (<span class="number">2</span> y) (<span class="number">3</span> n))</span> <span class="keyword">:key</span> #<span class="quoted">'cadr</span>)</span></span><br></pre></td></tr></table></figure></span>
+
+
+It will output:
+
+&gt;(2 Y)
+</code></pre><h2 id="main_program">main program</h2><p>This is the complete program. </p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">; this is a text adventory game.</span></span><br><span class="line"><span class="comment">; by Conrad Barski, M.D.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; describe these locations of the game</span></span><br><span class="line"><span class="list">(<span class="keyword">defparameter</span> <span class="variable">*nodes*</span></span><br><span class="line">  <span class="quoted">'((living-room (you are in the living-room.</span><br><span class="line">                      a wizard is snoring loudly on the couch.))</span><br><span class="line">    (garden (you are in a beautiful garden.</span><br><span class="line">                 there is a well in front of you.))</span><br><span class="line">    (attic (you are in the attic.</span><br><span class="line">                there is a giant welding torch in the corner.)))</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;describe each location and the paths of each of them</span></span><br><span class="line"><span class="list">(<span class="keyword">defparameter</span> <span class="variable">*edges*</span> <span class="quoted">'((living-room (garden west door)</span><br><span class="line">                                    (attic upstair ladder))</span><br><span class="line">                       (garden (living-room east door))</span><br><span class="line">                       (attic (living-room downstairs ladder)))</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; a function to describe current location</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> describe-location <span class="list">(<span class="keyword">location</span> nodes)</span></span><br><span class="line">  <span class="list">(<span class="keyword">cadr</span> <span class="list">(<span class="keyword">assoc</span> location nodes)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; describe the path of a location</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> describe-path <span class="list">(<span class="keyword">edge</span>)</span></span><br><span class="line">  <span class="quoted">`(there is a ,(caddr edge) goting ,(cadr edge) from here.)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; describe multipal paths of a location</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> describe-paths <span class="list">(<span class="keyword">location</span> edges)</span></span><br><span class="line">  <span class="list">(<span class="keyword">apply</span> #<span class="quoted">'append</span> <span class="list">(<span class="keyword">mapcar</span> #<span class="quoted">'describe-path</span> <span class="list">(<span class="keyword">cdr</span> <span class="list">(<span class="keyword">assoc</span> location edges)</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; describe objects</span></span><br><span class="line"><span class="list">(<span class="keyword">defparameter</span> <span class="variable">*objects*</span> <span class="quoted">'(whiskey bucket frog chain)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; describe locations of objects</span></span><br><span class="line"><span class="list">(<span class="keyword">defparameter</span> <span class="variable">*object-locations*</span></span><br><span class="line">       <span class="quoted">'((whiskey living-room)</span><br><span class="line">         (bucket living-room)</span><br><span class="line">         (chain garden)</span><br><span class="line">         (frog garden))</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; list the object visible from a given location</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> objects-at <span class="list">(<span class="keyword">loc</span> objs obj-locs)</span></span><br><span class="line">  <span class="list">(<span class="keyword">labels</span> <span class="list">(<span class="list">(<span class="keyword">at-loc-p</span> <span class="list">(<span class="keyword">obj</span>)</span> <span class="list">(<span class="keyword">eq</span> loc <span class="list">(<span class="keyword">cadr</span> <span class="list">(<span class="keyword">assoc</span> obj obj-locs)</span>)</span>)</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">remove-if-not</span> #<span class="quoted">'at-loc-p</span> objs)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; describe objects visible at a given location</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> describe-objects <span class="list">(<span class="keyword">loc</span> objs obj-locs)</span></span><br><span class="line">  <span class="list">(<span class="keyword">labels</span> <span class="list">(<span class="list">(<span class="keyword">describe-obj</span> <span class="list">(<span class="keyword">obj</span>)</span></span><br><span class="line">             <span class="quoted">`(there is a ,obj on the floor.)</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">apply</span> #<span class="quoted">'append</span> <span class="list">(<span class="keyword">mapcar</span> #<span class="quoted">'describe-obj</span> <span class="list">(<span class="keyword">objects-at</span> loc objs obj-locs)</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; define current location</span></span><br><span class="line"><span class="list">(<span class="keyword">defparameter</span> <span class="variable">*location*</span> <span class="quoted">'living-room</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; start to look around</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> look <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">append</span> <span class="list">(<span class="keyword">describe-location</span> <span class="variable">*location*</span> <span class="variable">*nodes*</span>)</span></span><br><span class="line">          <span class="list">(<span class="keyword">describe-paths</span> <span class="variable">*location*</span> <span class="variable">*edges*</span>)</span></span><br><span class="line">          <span class="list">(<span class="keyword">describe-objects</span> <span class="variable">*location*</span> <span class="variable">*objects*</span> <span class="variable">*object-locations*</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; this function takes a direction and let me walk there</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> walk <span class="list">(<span class="keyword">direction</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">next</span> <span class="list">(<span class="keyword">find</span> direction <span class="list">(<span class="keyword">cdr</span> <span class="list">(<span class="keyword">assoc</span> <span class="variable">*location*</span> <span class="variable">*edges*</span>)</span>)</span> <span class="keyword">:key</span> #<span class="quoted">'cadr</span>)</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">if</span> next</span><br><span class="line">      <span class="list">(<span class="keyword">progn</span> <span class="list">(<span class="keyword">setf</span> <span class="variable">*location*</span> <span class="list">(<span class="keyword">car</span> next)</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">look</span>)</span>)</span></span><br><span class="line">      <span class="quoted">'(you can not go that way.)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; pick up a object</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> pickup <span class="list">(<span class="keyword">object</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">cond</span> <span class="list">(<span class="list">(<span class="keyword">member</span> object <span class="list">(<span class="keyword">objects-at</span> <span class="variable">*location*</span> <span class="variable">*objects*</span> <span class="variable">*object-locations*</span>)</span>)</span></span><br><span class="line">         <span class="list">(<span class="keyword">push</span> <span class="list">(<span class="keyword">list</span> object <span class="quoted">'body</span>)</span> <span class="variable">*object-locations*</span>)</span></span><br><span class="line">         <span class="quoted">`(you are now carrying the ,object)</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">t</span> <span class="quoted">'(you cannot get that.)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;see an inventory of objects I carry</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> inventory <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">cons</span> <span class="quoted">'items-</span> <span class="list">(<span class="keyword">objects-at</span> <span class="quoted">'body</span> <span class="variable">*objects*</span> <span class="variable">*object-locations*</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; this function add parentheses and quotes to what we input</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> game-read <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">cmd</span> <span class="list">(<span class="keyword">read-from-string</span> <span class="list">(<span class="keyword">concatenate</span> <span class="quoted">'string</span> <span class="string">"("</span> <span class="list">(<span class="keyword">read-line</span>)</span> <span class="string">")"</span>)</span>)</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">flet</span> <span class="list">(<span class="list">(<span class="keyword">quote-it</span> <span class="list">(<span class="keyword">x</span>)</span></span><br><span class="line">             <span class="list">(<span class="keyword">list</span> <span class="quoted">'quote</span> x)</span>)</span>)</span></span><br><span class="line">             <span class="list">(<span class="keyword">cons</span> <span class="list">(<span class="keyword">car</span> cmd)</span> <span class="list">(<span class="keyword">mapcar</span> #<span class="quoted">'quote-it</span> <span class="list">(<span class="keyword">cdr</span> cmd)</span>)</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; define allowed commands</span></span><br><span class="line"><span class="list">(<span class="keyword">defparameter</span> <span class="variable">*allowed-commands*</span> <span class="quoted">'(look walk pickup inventory)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;call some function</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> game-eval <span class="list">(<span class="keyword">sexp</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> <span class="list">(<span class="keyword">member</span> <span class="list">(<span class="keyword">car</span> sexp)</span> <span class="variable">*allowed-commands*</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">eval</span> sexp)</span></span><br><span class="line">    <span class="quoted">'(I do not know that command.)</span>)</span>)</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="play_the_game">play the game</h2><ol>
+<li>function <code>look</code> describe where are you, the paths you can go and the objects around you.</li>
+<li>function <code>walk</code> take a direction with a single quote as an argument. It will allows you go somewhere and print some error if there is no way in the direction.</li>
+<li>function <code>pickup</code> will allow you to pick up some object.</li>
+<li>function <code>inventory</code> will list those objects you have.</li>
+</ol>
+<p>This is an example:</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">(look)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(YOU ARE IN THE LIVING-ROOM. A WIZARD IS SNORING LOUDLY ON THE COUCH. THERE IS A DOOR GOTING WEST FROM HERE. THERE IS A LADDER GOTING UPSTAIR FROM HERE. THERE IS A WHISKEY ON THE FLOOR. THERE IS A BUCKET ON THE FLOOR.)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(walk 'west)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(YOU ARE IN A BEAUTIFUL GARDEN. THERE IS A WELL IN FRONT OF YOU. THERE IS A DOOR GOTING EAST FROM HERE. THERE IS A FROG ON THE FLOOR. THERE IS A CHAIN ON THE FLOOR.)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(pickup 'frog)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(YOU ARE NOW CARRYING THE FROG)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(inventory)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(ITEMS- FROG)</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>I will try to add a custom text game interface which will make the game play more seamless for the player.</p>
+<hr>
+<h2 id="Add_a_Custom_Interface_to_Our_Game">Add a Custom Interface to Our Game</h2><h3 id="Some_Functions_about_print_and_read">Some Functions about print and read</h3><ol>
+<li><p><code>print</code></p>
+<p> This function uses to print something. For Example:</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">print</span> '<span class="number">3</span>')</span></span><br><span class="line"><span class="list">(<span class="keyword">print</span> <span class="quoted">'foo</span>')</span></span><br><span class="line"><span class="list">(<span class="keyword">print</span> '<span class="string">"foo"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">print</span> <span class="quoted">'#</span>\a)</span></span><br></pre></td></tr></table></figure>
+<p> It will output:</p>
+<blockquote>
+<p>3<br>FOO<br>“FOO”<br>‘#’\A  (does not include single quote.)</p>
+</blockquote>
+<p> Note that this function will place a space character at the end of the printed value and start a new line before print another value.</p>
+</li>
+<li><p><code>princ</code></p>
+<p> This function does less than <code>print</code>. It will print value as it was. For example:</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">progn</span> <span class="list">(<span class="keyword">prin1</span> <span class="string">"This"</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">prin1</span> <span class="string">"is"</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">prin1</span> <span class="string">"a"</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">prin1</span> <span class="string">"test"</span>)</span>)</span></span><br></pre></td></tr></table></figure>
+<p> It will output:</p>
+<blockquote>
+<p>“This””is””a””test”</p>
+</blockquote>
+</li>
+<li><p><code>read</code></p>
+<p> read something from input. eg:</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> add-one <span class="list">()</span></span><br><span class="line">    <span class="list">(<span class="keyword">print</span> <span class="string">"Enter a value"</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">num</span> <span class="list">(<span class="keyword">read</span>)</span>)</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">print</span> <span class="string">"When I add one I get"</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">print</span> <span class="list">(<span class="keyword">+</span> num <span class="number">1</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure>
+<p> When we run this function:</p>
+<blockquote>
+<p>(add-one)<br>“Enter a value”<br>3<br>“When I add one I get”<br>4</p>
+</blockquote>
+</li>
+<li><p><code>read-line</code></p>
+<p> This command captures and returns all the text entered until the ENTER key is pessed, without any fuss.</p>
+</li>
+<li><p><code>eval</code></p>
+<p> This command can execute some data as if it were a piece  of code. eg:</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defparameter</span> <span class="variable">*foo*</span> <span class="quoted">'(+ <span class="number">4</span> <span class="number">5</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">eval</span> <span class="variable">*foo*</span>)</span></span><br></pre></td></tr></table></figure>
+<p> It will output:</p>
+<blockquote>
+<p>9</p>
+</blockquote>
+</li>
+<li><p><code>concatenate</code></p>
+<p> It can be used for concatenating strings together. eg:</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">concatenate</span> <span class="quoted">'string</span> <span class="string">"("</span> <span class="list">(<span class="keyword">read-ling</span>)</span> <span class="string">")"</span>)</span></span><br></pre></td></tr></table></figure>
+<p> To run it:</p>
+<blockquote>
+<p>liu<br>“(liu)”</p>
+</blockquote>
+</li>
+<li><p><code>read-from-string</code></p>
+<p> It let us read a syntax expression from a string instead of from the console. eg:</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">cmd</span> <span class="list">(<span class="keyword">read-from-string</span> <span class="string">"(liu)"</span>)</span>)</span>)</span></span><br><span class="line"> 	<span class="list">(<span class="keyword">princ</span> cmd)</span>)</span></span><br></pre></td></tr></table></figure>
+<p> To run it:</p>
+<blockquote>
+<p>(LIU)</p>
+</blockquote>
+</li>
+</ol>
+<p>I add game-read and game-eval functions to the original code.</p>
+
+        
+
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Common-Lisp/">
+                #Common Lisp
+              </a>
+            
+          </div>
+        
+
+        
+          <div class="post-nav">
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2014/06/01/run-1/">Run-1</a>
+              
+            </div>
+
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2014/05/31/my-previous-blog/">My Previous Blog</a>
+              
+            </div>
+          </div>
+        
+
+        
+        
+      </div>
+    
+  </div>
+
+
+
+  
+    <div class="comments" id="comments">
+      
+    </div>
+  
+
+          </div>
+
+          
+        </div>
+
+        
+<div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+    
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview">
+          站点概览
+        </li>
+      </ul>
+    
+
+    <div class="site-overview">
+      <div class="site-author motion-element">
+        <img class="site-author-image" src="/images/default_avatar.jpg" alt="liuxueyang" />
+        <p class="site-author-name">liuxueyang</p>
+      </div>
+      <p class="site-description motion-element"></p>
+      <div class="site-state motion-element">
+        <div class="site-state-item site-state-posts">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </div>
+        <div class="site-state-item site-state-tags">
+            <span class="site-state-item-count">11</span>
+            <span class="site-state-item-name">标签</span>
+        </div>
+        <div class="site-state-item site-state-pages">
+            <span class="site-state-item-count">0</span>
+            <span class="site-state-item-name">页面</span>
+        </div>
+      </div>
+
+      
+
+      <div class="social-info motion-element">
+        
+      </div>
+
+    </div>
+
+    
+      <div class="post-toc sidebar-panel-active">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#some_useful_functions"><span class="nav-number">1.</span> <span class="nav-text">some useful functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#main_program"><span class="nav-number">2.</span> <span class="nav-text">main program</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#play_the_game"><span class="nav-number">3.</span> <span class="nav-text">play the game</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add_a_Custom_Interface_to_Our_Game"><span class="nav-number">4.</span> <span class="nav-text">Add a Custom Interface to Our Game</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Some_Functions_about_print_and_read"><span class="nav-number">4.1.</span> <span class="nav-text">Some Functions about print and read</span></a></li></ol></li></ol>
+      </div>
+    
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">liuxueyang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 - <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT</a>
+</div>
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".fancybox").fancybox();
+    });
+  </script>
+
+  <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+</script>
+
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    sidebatToggleMotion();
+    postsListMotion();
+    backToTopMotion();
+
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      $('.post').velocity('transition.slideDownIn', {stagger: 300, drag: true});
+    }
+
+    function sidebatToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+  
+<script type="text/javascript" id="bootstrap.scrollspy.custom">
+  /* ========================================================================
+  * Bootstrap: scrollspy.js v3.3.2
+  * http://getbootstrap.com/javascript/#scrollspy
+  * ========================================================================
+  * Copyright 2011-2015 Twitter, Inc.
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * ======================================================================== */
+
+  /**
+   * Custom by iissnan
+   *
+   * - Add a `clear.bs.scrollspy` event.
+   * - Esacpe targets selector.
+   */
+
+
+  +function ($) {
+    'use strict';
+
+    // SCROLLSPY CLASS DEFINITION
+    // ==========================
+
+    function ScrollSpy(element, options) {
+      this.$body          = $(document.body)
+      this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+      this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+      this.selector       = (this.options.target || '') + ' .nav li > a'
+      this.offsets        = []
+      this.targets        = []
+      this.activeTarget   = null
+      this.scrollHeight   = 0
+
+      this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+      this.refresh()
+      this.process()
+    }
+
+    ScrollSpy.VERSION  = '3.3.2'
+
+    ScrollSpy.DEFAULTS = {
+      offset: 10
+    }
+
+    ScrollSpy.prototype.getScrollHeight = function () {
+      return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+    }
+
+    ScrollSpy.prototype.refresh = function () {
+      var that          = this
+      var offsetMethod  = 'offset'
+      var offsetBase    = 0
+
+      this.offsets      = []
+      this.targets      = []
+      this.scrollHeight = this.getScrollHeight()
+
+      if (!$.isWindow(this.$scrollElement[0])) {
+        offsetMethod = 'position'
+        offsetBase   = this.$scrollElement.scrollTop()
+      }
+
+      this.$body
+        .find(this.selector)
+        .map(function () {
+          var $el   = $(this)
+          var href  = $el.data('target') || $el.attr('href')
+          var $href = /^#./.test(href) && $(escapeSelector(href)) // Need to escape selector.
+
+          return ($href
+            && $href.length
+            && $href.is(':visible')
+            && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+        })
+        .sort(function (a, b) { return a[0] - b[0] })
+        .each(function () {
+          that.offsets.push(this[0])
+          that.targets.push(this[1])
+        })
+
+
+    }
+
+    ScrollSpy.prototype.process = function () {
+      var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+      var scrollHeight = this.getScrollHeight()
+      var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+      var offsets      = this.offsets
+      var targets      = this.targets
+      var activeTarget = this.activeTarget
+      var i
+
+      if (this.scrollHeight != scrollHeight) {
+        this.refresh()
+      }
+
+      if (scrollTop >= maxScroll) {
+        return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+      }
+
+      if (activeTarget && scrollTop < offsets[0]) {
+        $(this.selector).trigger('clear.bs.scrollspy')  // Add a custom event.
+        this.activeTarget = null
+        return this.clear()
+      }
+
+      for (i = offsets.length; i--;) {
+        activeTarget != targets[i]
+          && scrollTop >= offsets[i]
+          && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+          && this.activate(targets[i])
+      }
+    }
+
+    ScrollSpy.prototype.activate = function (target) {
+      this.activeTarget = target
+
+      this.clear()
+
+      var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href="' + target + '"]'
+
+      var active = $(selector)
+        .parents('li')
+        .addClass('active')
+
+      if (active.parent('.dropdown-menu').length) {
+        active = active
+          .closest('li.dropdown')
+          .addClass('active')
+      }
+
+      active.trigger('activate.bs.scrollspy')
+    }
+
+    ScrollSpy.prototype.clear = function () {
+      $(this.selector)
+        .parentsUntil(this.options.target, '.active')
+        .removeClass('active')
+    }
+
+
+    // SCROLLSPY PLUGIN DEFINITION
+    // ===========================
+
+    function Plugin(option) {
+      return this.each(function () {
+        var $this   = $(this)
+        var data    = $this.data('bs.scrollspy')
+        var options = typeof option == 'object' && option
+
+        if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+        if (typeof option == 'string') data[option]()
+      })
+    }
+
+    var old = $.fn.scrollspy
+
+    $.fn.scrollspy             = Plugin
+    $.fn.scrollspy.Constructor = ScrollSpy
+
+
+    // SCROLLSPY NO CONFLICT
+    // =====================
+
+    $.fn.scrollspy.noConflict = function () {
+      $.fn.scrollspy = old
+      return this
+    }
+
+
+    // SCROLLSPY DATA-API
+    // ==================
+
+    $(window).on('load.bs.scrollspy.data-api', function () {
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this)
+        Plugin.call($spy, $spy.data())
+      })
+    })
+
+  }(jQuery);
+</script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      $tocSelector.scrollPager({
+        max: getTOCMaxHeight()
+      });
+    }
+
+    function getTOCMaxHeight () {
+      // TODO: Make it beautiful
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+        parseInt($sidebarInner.css('padding-top'), 10) -
+        parseInt($sidebarInner.css('padding-bottom'), 10) -
+        $('.sidebar-nav').height() -
+        parseInt($tocSelector.css('margin-top'), 10) -
+        parseInt($tocSelector.css('margin-bottom'), 10);
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+      });
+    }
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      if ($('.post-toc').html().trim().length > 0 && isDesktop()) {
+        setTimeout(function () {
+          $('.sidebar-toggle').trigger('click');
+        }, 800);
+      }
+    });
+  </script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+  
+</body>
+</html>

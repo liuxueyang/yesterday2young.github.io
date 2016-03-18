@@ -1,0 +1,794 @@
+<!doctype html>
+<html class="theme-next use-motion">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.3.0rc5"/>
+
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.3.0rc5" />
+
+
+
+
+  <title> Round#251 // wonders of the universe </title>
+</head>
+
+<body>
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+    <a href="/" class="brand">
+        <span class="logo">
+          <i class="icon-logo"></i>
+        </span>
+        <span class="site-title">wonders of the universe</span>
+    </a>
+</h1>
+
+
+  <ul id="menu" class="menu">
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首页
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          归档
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          标签
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+            
+          
+
+          <div id="posts" class="posts-expand">
+            
+  
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              Round#251
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+          <span class="post-time">
+            
+              发表于 2014-06-05
+            
+          </span>
+        
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          <h2 id="A-_Devu,_the_Singer_and_Churu,_the_Joker"><a href="http://codeforces.com/contest/439/problem/A" target="_blank" rel="external">A. Devu, the Singer and Churu, the Joker</a></h2><blockquote>
+<p>Devu is a renowned classical singer. He is invited to many big functions/festivals. Recently he was invited to “All World Classical Singing Festival”. Other than Devu, comedian Churu was also invited.</p>
+<p>Devu has provided organizers a list of the songs and required time for singing them. He will sing n songs, ith song will take ti minutes exactly.</p>
+<p>The Comedian, Churu will crack jokes. All his jokes are of 5 minutes exactly.</p>
+<p>People have mainly come to listen Devu. But you know that he needs rest of 10 minutes after each song. On the other hand, Churu being a very active person, doesn’t need any rest.</p>
+<p>You as one of the organizers should make an optimal sсhedule for the event. For some reasons you must follow the conditions:</p>
+<p>The duration of the event must be no more than d minutes;<br>Devu must complete all his songs;<br>With satisfying the two previous conditions the number of jokes cracked by Churu should be as many as possible.<br>If it is not possible to find a way to conduct all the songs of the Devu, output -1. Otherwise find out maximum number of jokes that Churu can crack in the grand event.</p>
+<p>Input<br>The first line contains two space separated integers n, d (1 ≤ n ≤ 100; 1 ≤ d ≤ 10000). The second line contains n space-separated integers: t1, t2, …, tn (1 ≤ ti ≤ 100).</p>
+<p>Output<br>If there is no way to conduct all the songs of Devu, output -1. Otherwise output the maximum number of jokes that Churu can crack in the grand event.</p>
+<p>Sample test(s)<br>input<br>3 30<br>2 2 1<br>output<br>5<br>input<br>3 20<br>2 1 1<br>output<br>-1<br>Note<br>Consider the first example. The duration of the event is 30 minutes. There could be maximum 5 jokes in the following way:</p>
+<p>First Churu cracks a joke in 5 minutes.<br>Then Devu performs the first song for 2 minutes.<br>Then Churu cracks 2 jokes in 10 minutes.<br>Now Devu performs second song for 2 minutes.<br>Then Churu cracks 2 jokes in 10 minutes.<br>Now finally Devu will perform his last song in 1 minutes.<br>Total time spent is 5 + 2 + 10 + 2 + 10 + 1 = 30 minutes.</p>
+<p>Consider the second example. There is no way of organizing Devu’s all songs. Hence the answer is -1.</p>
+</blockquote>
+<p>It is easy and I wrote in python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">n, d = map(int, input().split())</span><br><span class="line">t = list(map(int, input().split()))</span><br><span class="line">sum_time = (n - <span class="number">1</span>) * <span class="number">10</span> + sum(t)</span><br><span class="line"><span class="keyword">if</span> sum_time &gt; d:</span><br><span class="line">    print(-<span class="number">1</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    res_time = d - sum_time</span><br><span class="line">    cnt = res_time / <span class="number">5</span> + (n - <span class="number">1</span>) * <span class="number">2</span></span><br><span class="line">    print(int(cnt))</span><br></pre></td></tr></table></figure>
+<h2 id="B-_Devu,_the_Dumb_Guy"><a href="http://codeforces.com/contest/439/problem/B" target="_blank" rel="external">B. Devu, the Dumb Guy</a></h2><blockquote>
+<p>Devu is a dumb guy, his learning curve is very slow. You are supposed to teach him n subjects, the ith subject has ci chapters. When you teach him, you are supposed to teach all the chapters of a subject continuously.</p>
+<p>Let us say that his initial per chapter learning power of a subject is x hours. In other words he can learn a chapter of a particular subject in x hours.</p>
+<p>Well Devu is not complete dumb, there is a good thing about him too. If you teach him a subject, then time required to teach any chapter of the next subject will require exactly 1 hour less than previously required (see the examples to understand it more clearly). Note that his per chapter learning power can not be less than 1 hour.</p>
+<p>You can teach him the n subjects in any possible order. Find out minimum amount of time (in hours) Devu will take to understand all the subjects and you will be free to do some enjoying task rather than teaching a dumb guy.</p>
+<p>Please be careful that answer might not fit in 32 bit data type.</p>
+<p>Input<br>The first line will contain two space separated integers n, x (1 ≤ n, x ≤ 105). The next line will contain n space separated integers: c1, c2, …, cn (1 ≤ ci ≤ 105).</p>
+<p>Output<br>Output a single integer representing the answer to the problem.</p>
+<p>Sample test(s)<br>input<br>2 3<br>4 1<br>output<br>11<br>input<br>4 2<br>5 1 2 1<br>output<br>10<br>input<br>3 3<br>1 1 1<br>output<br>6<br>Note<br>Look at the first example. Consider the order of subjects: 1, 2. When you teach Devu the first subject, it will take him 3 hours per chapter, so it will take 12 hours to teach first subject. After teaching first subject, his per chapter learning time will be 2 hours. Now teaching him second subject will take 2 × 1 = 2 hours. Hence you will need to spend 12 + 2 = 14 hours.</p>
+<p>Consider the order of subjects: 2, 1. When you teach Devu the second subject, then it will take him 3 hours per chapter, so it will take 3 × 1 = 3 hours to teach the second subject. After teaching the second subject, his per chapter learning time will be 2 hours. Now teaching him the first subject will take 2 × 4 = 8 hours. Hence you will need to spend 11 hours.</p>
+<p>So overall, minimum of both the cases is 11 hours.</p>
+<p>Look at the third example. The order in this example doesn’t matter. When you teach Devu the first subject, it will take him 3 hours per chapter. When you teach Devu the second subject, it will take him 2 hours per chapter. When you teach Devu the third subject, it will take him 1 hours per chapter. In total it takes 6 hours.</p>
+</blockquote>
+<p>Note the sentence <code>lease be careful that answer might not fit in 32 bit data type.</code>! I got wrong answer when I treat the answer as int. However, this is not all. I got pretest accepted but I got wrong answer after the contest! This is because when I convert a value multiplied by two values of <code>int</code> to a <code>long long int</code> I made a mistake. Because when two <code>int</code>s are multiplied, the result is <code>int</code>. If the result is overflowed, it is vain to convert that value to <code>long long int</code>. So we should first convert each <code>int</code> to <code>long long int</code> then multiply them.</p>
+<p>This is my c++ code:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">c++</span><br><span class="line"><span class="comment">/*</span><br><span class="line"> * =====================================================================================</span><br><span class="line"> *       Filename : DumbGuy.cpp</span><br><span class="line"> *    Description : dumb guy</span><br><span class="line"> *    Version     : 0.1</span><br><span class="line"> *        Created : 06/04/14 23:54</span><br><span class="line"> *         Author : Liu Xue Yang (LXY), liuxueyang457@163.com</span><br><span class="line"> *         Motto  : Suicide is Painless</span><br><span class="line"> * =====================================================================================</span><br><span class="line"> */</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdlib&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;algorithm&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstring&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;string&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span><br><span class="line"> * ===  FUNCTION  ======================================================================</span><br><span class="line"> *         Name: main</span><br><span class="line"> * =====================================================================================</span><br><span class="line"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> c[<span class="number">100005</span>];</span><br><span class="line">	<span class="function"><span class="keyword">int</span></span><br><span class="line"><span class="title">main</span> <span class="params">( <span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[] )</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="comment">// long long x;</span></span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line"><span class="preprocessor">#ifndef ONLINE_JUDGE</span></span><br><span class="line">	freopen(<span class="string">"DumbGuy.txt"</span>, <span class="string">"r"</span>, stdin);</span><br><span class="line"><span class="preprocessor">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> ( <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;x ) &#123;</span><br><span class="line">		<span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="keyword">sizeof</span>(c));</span><br><span class="line">		<span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i ) &#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;c[i];</span><br><span class="line">		&#125;</span><br><span class="line">		sort(c, c + n);</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i ) &#123;</span><br><span class="line">			<span class="keyword">if</span> ( x &gt; <span class="number">1</span> ) &#123;</span><br><span class="line"><span class="comment">//			 sum += (long long)((x--) * c[i]);              /* error! */</span></span><br><span class="line"><span class="comment">//			 sum = sum + (long long)(x--) * (long long)(c[i]); /* correct */</span></span><br><span class="line"><span class="comment">//			 sum = sum + (long long)((x--) * c[i]);         /* error */</span></span><br><span class="line">				sum += (<span class="keyword">long</span> <span class="keyword">long</span>)(x--) * (<span class="keyword">long</span> <span class="keyword">long</span>)(c[i]); <span class="comment">/* correct */</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">// sum += (long long)(c[i]);</span></span><br><span class="line">				sum = sum + (<span class="keyword">long</span> <span class="keyword">long</span>)(c[i]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;				<span class="comment">/* ----------  end of function main  ---------- */</span></span><br></pre></td></tr></table></figure>
+<p>It should be better if I wrote in python3 =_=:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n, x = map(int, input().split())&#10;c = list(map(int, input().split()))&#10;c.sort()&#10;r_sum = 0&#10;for i in c:&#10;    if x &#62; 1:&#10;        r_sum += i * x&#10;        x -= 1&#10;    else:&#10;        r_sum += i&#10;print(r_sum)</span><br></pre></td></tr></table></figure>
+<h2 id="C-_Devu_and_Partitioning_of_the_Array"><a href="http://codeforces.com/contest/439/problem/C" target="_blank" rel="external">C. Devu and Partitioning of the Array</a></h2><blockquote>
+<p>Devu being a small kid, likes to play a lot, but he only likes to play with arrays. While playing he came up with an interesting question which he could not solve, can you please solve it for him?</p>
+<p>Given an array consisting of distinct integers. Is it possible to partition the whole array into k disjoint non-empty parts such that p of the parts have even sum (each of them must have even sum) and remaining k - p have odd sum? (note that parts need not to be continuous).</p>
+<p>If it is possible to partition the array, also give any possible way of valid partitioning.</p>
+<p>Input<br>The first line will contain three space separated integers n, k, p (1 ≤ k ≤ n ≤ 105; 0 ≤ p ≤ k). The next line will contain n space-separated distinct integers representing the content of array a: a1, a2, …, an (1 ≤ ai ≤ 109).</p>
+<p>Output<br>In the first line print “YES” (without the quotes) if it is possible to partition the array in the required way. Otherwise print “NO” (without the quotes).</p>
+<p>If the required partition exists, print k lines after the first line. The ith of them should contain the content of the ith part. Print the content of the part in the line in the following way: firstly print the number of elements of the part, then print all the elements of the part in arbitrary order. There must be exactly p parts with even sum, each of the remaining k - p parts must have odd sum.</p>
+<p>As there can be multiple partitions, you are allowed to print any valid partition.</p>
+<p>Sample test(s)<br>input<br>5 5 3<br>2 6 10 5 9<br>output<br>YES<br>1 9<br>1 5<br>1 10<br>1 6<br>1 2<br>input<br>5 5 3<br>7 14 2 9 5<br>output<br>NO<br>input<br>5 3 1<br>1 2 3 7 5<br>output<br>YES<br>3 5 1 3<br>1 7<br>1 2</p>
+</blockquote>
+<p>While, I got wrong answer two times in the contest. Maybe it is not very difficult for this implementation problem. But I have to be careful and find an easy way to solve it.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line"> * =====================================================================================</span><br><span class="line"> *       Filename : PartitionOfArray.cpp</span><br><span class="line"> *    Description : partition</span><br><span class="line"> *    Version     : 0.1</span><br><span class="line"> *        Created : 06/05/14 00:25</span><br><span class="line"> *         Author : Liu Xue Yang (LXY), liuxueyang457@163.com</span><br><span class="line"> *         Motto  : Suicide is Painless</span><br><span class="line"> * =====================================================================================</span><br><span class="line"> */</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdlib&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;vector&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;algorithm&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;string&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstring&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span><br><span class="line"> * ===  FUNCTION  ======================================================================</span><br><span class="line"> *         Name: main</span><br><span class="line"> * =====================================================================================</span><br><span class="line"> */</span></span><br><span class="line"><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> ans[<span class="number">100005</span>];</span><br><span class="line">	<span class="function"><span class="keyword">int</span></span><br><span class="line"><span class="title">main</span> <span class="params">( <span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[] )</span></span><br><span class="line"></span>&#123;</span><br><span class="line"><span class="preprocessor">#ifndef ONLINE_JUDGE</span></span><br><span class="line">	freopen(<span class="string">"PartitionOfArray.txt"</span>, <span class="string">"r"</span>, stdin);</span><br><span class="line"><span class="preprocessor">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="keyword">int</span> n, k, p;</span><br><span class="line">	<span class="keyword">while</span> ( <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k &gt;&gt; p ) &#123;</span><br><span class="line">		<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> odd, even;</span><br><span class="line">		odd.clear();</span><br><span class="line">		even.clear();</span><br><span class="line">		<span class="keyword">int</span> tmp;</span><br><span class="line">		<span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i ) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; tmp;</span><br><span class="line">			<span class="keyword">if</span> ( tmp &amp; <span class="number">1</span> ) &#123;</span><br><span class="line">				odd.push_back(tmp);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				even.push_back(tmp);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> n_even = p, n_odd = k - p;</span><br><span class="line">		<span class="comment">// odd is not enough</span></span><br><span class="line">		<span class="keyword">if</span> ( odd.size() &lt; n_odd ) &#123;</span><br><span class="line">			<span class="built_in">printf</span> ( <span class="string">"NO\n"</span> );</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// number of odd's parity is not match</span></span><br><span class="line">		<span class="function"><span class="keyword">else</span> <span class="title">if</span> <span class="params">( (odd.size()</span> - n_odd) &amp; 1 ) </span>&#123;</span><br><span class="line">			<span class="built_in">printf</span> ( <span class="string">"NO\n"</span> );</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// even number is not enough</span></span><br><span class="line">		<span class="function"><span class="keyword">else</span> <span class="title">if</span> <span class="params">( (even.size()</span> + <span class="params">(odd.size()</span> - n_odd) / 2) &lt; n_even ) </span>&#123;</span><br><span class="line">			<span class="built_in">printf</span> ( <span class="string">"NO\n"</span> );</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">printf</span> ( <span class="string">"YES\n"</span> );</span><br><span class="line">			<span class="keyword">int</span> j, h, z;</span><br><span class="line">			<span class="keyword">for</span> ( j = <span class="number">0</span>; j &lt; k; ++j )</span><br><span class="line">				ans[j].clear();</span><br><span class="line">			<span class="comment">// add n_odd odd numbers</span></span><br><span class="line">			<span class="keyword">for</span> ( j = <span class="number">0</span>, h = <span class="number">0</span>; j &lt; n_odd; ++j, ++h ) &#123;</span><br><span class="line">				ans[h].push_back(odd[j]);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// add as much as even numbers</span></span><br><span class="line">			<span class="keyword">for</span> ( z = <span class="number">0</span>; z &lt; even.size() &amp;&amp; h &lt; k; ++h, ++z ) &#123;</span><br><span class="line">				ans[h].push_back(even[z]);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> ( h == k ) &#123;</span><br><span class="line">				<span class="comment">// remaining even numbers</span></span><br><span class="line">				<span class="keyword">for</span> ( ; z &lt; even.size(); ++z ) </span><br><span class="line">					ans[<span class="number">0</span>].push_back(even[z]);</span><br><span class="line">				<span class="comment">// remaining odd numbers</span></span><br><span class="line">				<span class="keyword">for</span> ( ; j + <span class="number">1</span> &lt; odd.size(); j+=<span class="number">2</span> ) &#123;</span><br><span class="line">					ans[<span class="number">0</span>].push_back(odd[j]);</span><br><span class="line">					ans[<span class="number">0</span>].push_back(odd[j+<span class="number">1</span>]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">// we should add those odd numbers to serve as even sets</span></span><br><span class="line">				<span class="keyword">for</span> ( ; j + <span class="number">1</span>&lt; odd.size() &amp;&amp; h &lt; k; ++h, j += <span class="number">2</span> ) &#123;</span><br><span class="line">					ans[h].push_back(odd[j]);</span><br><span class="line">					ans[h].push_back(odd[j+<span class="number">1</span>]);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">// because there must not be any even numbers, we just add odd numbers</span></span><br><span class="line">				<span class="keyword">for</span> ( ; j + <span class="number">1</span> &lt; odd.size(); j+=<span class="number">2</span> ) &#123;</span><br><span class="line">					ans[<span class="number">0</span>].push_back(odd[j]);</span><br><span class="line">					ans[<span class="number">0</span>].push_back(odd[j+<span class="number">1</span>]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> ( z = <span class="number">0</span>; z &lt; k; ++z ) &#123;</span><br><span class="line">				<span class="built_in">printf</span> ( <span class="string">"%ld"</span>, ans[z].size() );</span><br><span class="line">				<span class="keyword">for</span> ( j = <span class="number">0</span>; j &lt; ans[z].size(); ++j ) &#123;</span><br><span class="line">					<span class="built_in">printf</span> ( <span class="string">" %d"</span>, ans[z][j] );</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="built_in">printf</span> ( <span class="string">"\n"</span> );</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;				<span class="comment">/* ----------  end of function main  ---------- */</span></span><br></pre></td></tr></table></figure>
+<h2 id="D-_Devu_and_his_Brother"><a href="http://codeforces.com/contest/439/problem/D" target="_blank" rel="external">D. Devu and his Brother</a></h2><blockquote>
+<p>Devu and his brother love each other a lot. As they are super geeks, they only like to play with arrays. They are given two arrays a and b by their father. The array a is given to Devu and b to his brother.</p>
+<p>As Devu is really a naughty kid, he wants the minimum value of his array a should be at least as much as the maximum value of his brother’s array b.</p>
+<p>Now you have to help Devu in achieving this condition. You can perform multiple operations on the arrays. In a single operation, you are allowed to decrease or increase any element of any of the arrays by 1. Note that you are allowed to apply the operation on any index of the array multiple times.</p>
+<p>You need to find minimum number of operations required to satisfy Devu’s condition so that the brothers can play peacefully without fighting.</p>
+<p>Input<br>The first line contains two space-separated integers n, m (1 ≤ n, m ≤ 105). The second line will contain n space-separated integers representing content of the array a (1 ≤ ai ≤ 109). The third line will contain m space-separated integers representing content of the array b (1 ≤ bi ≤ 109).</p>
+<p>Output<br>You need to output a single integer representing the minimum number of operations needed to satisfy Devu’s condition.</p>
+<p>Sample test(s)<br>input<br>2 2<br>2 3<br>3 5<br>output<br>3<br>input<br>3 2<br>1 2 3<br>3 4<br>output<br>4<br>input<br>3 2<br>4 5 6<br>1 2<br>output<br>0<br>Note<br>In example 1, you can increase a1 by 1 and decrease b2 by 1 and then again decrease b2 by 1. Now array a will be [3; 3] and array b will also be [3; 3]. Here minimum element of a is at least as large as maximum element of b. So minimum number of operations needed to satisfy Devu’s condition are 3.</p>
+<p>In example 3, you don’t need to do any operation, Devu’s condition is already satisfied.</p>
+</blockquote>
+<p><a href="http://codeforces.com/blog/entry/12545#comment-172693" target="_blank" rel="external">This</a> solution is amazing!</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line"> * =====================================================================================</span><br><span class="line"> *       Filename : Brother.cpp</span><br><span class="line"> *    Description : smart solution</span><br><span class="line"> *    Version     : 0.1</span><br><span class="line"> *        Created : 06/07/14 21:51</span><br><span class="line"> *         Author : Liu Xue Yang (LXY), liuxueyang457@163.com</span><br><span class="line"> *         Motto  : Suicide is Painless</span><br><span class="line"> * =====================================================================================</span><br><span class="line"> */</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;vector&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;algorithm&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdlib&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">/* </span><br><span class="line"> * ===  FUNCTION  ======================================================================</span><br><span class="line"> *         Name: main</span><br><span class="line"> * =====================================================================================</span><br><span class="line"> */</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">int</span></span><br><span class="line"><span class="title">main</span> <span class="params">( <span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[] )</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, m;</span><br><span class="line"><span class="preprocessor">#ifndef ONLINE_JUDGE</span></span><br><span class="line">	freopen(<span class="string">"Brother.txt"</span>, <span class="string">"r"</span>, stdin);</span><br><span class="line"><span class="preprocessor">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> a, b;</span><br><span class="line">	<span class="keyword">while</span> ( <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m ) &#123;</span><br><span class="line">		<span class="keyword">int</span> i, tmp;</span><br><span class="line">		a.clear();</span><br><span class="line">		b.clear();</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; ++i)  &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; tmp;</span><br><span class="line">			a.push_back(tmp);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; tmp;</span><br><span class="line">			b.push_back(tmp);</span><br><span class="line">		&#125;</span><br><span class="line">		sort(a.begin(), a.end());</span><br><span class="line">		sort(b.begin(), b.end(), greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; min(n, m) &amp;&amp; a[i] &lt; b[i]; ++i)</span><br><span class="line">			res += (b[i] - a[i]);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; res &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;				<span class="comment">/* ----------  end of function main  ---------- */</span></span><br></pre></td></tr></table></figure>
+
+        
+
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+          <div class="post-nav">
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2014/06/07/run-2/">run-2</a>
+              
+            </div>
+
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2014/06/01/run-1/">Run-1</a>
+              
+            </div>
+          </div>
+        
+
+        
+        
+      </div>
+    
+  </div>
+
+
+
+  
+    <div class="comments" id="comments">
+      
+    </div>
+  
+
+          </div>
+
+          
+        </div>
+
+        
+<div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+    
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview">
+          站点概览
+        </li>
+      </ul>
+    
+
+    <div class="site-overview">
+      <div class="site-author motion-element">
+        <img class="site-author-image" src="/images/default_avatar.jpg" alt="liuxueyang" />
+        <p class="site-author-name">liuxueyang</p>
+      </div>
+      <p class="site-description motion-element"></p>
+      <div class="site-state motion-element">
+        <div class="site-state-item site-state-posts">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </div>
+        <div class="site-state-item site-state-tags">
+            <span class="site-state-item-count">11</span>
+            <span class="site-state-item-name">标签</span>
+        </div>
+        <div class="site-state-item site-state-pages">
+            <span class="site-state-item-count">0</span>
+            <span class="site-state-item-name">页面</span>
+        </div>
+      </div>
+
+      
+
+      <div class="social-info motion-element">
+        
+      </div>
+
+    </div>
+
+    
+      <div class="post-toc sidebar-panel-active">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-_Devu,_the_Singer_and_Churu,_the_Joker"><span class="nav-number">1.</span> <span class="nav-text">A. Devu, the Singer and Churu, the Joker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-_Devu,_the_Dumb_Guy"><span class="nav-number">2.</span> <span class="nav-text">B. Devu, the Dumb Guy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-_Devu_and_Partitioning_of_the_Array"><span class="nav-number">3.</span> <span class="nav-text">C. Devu and Partitioning of the Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D-_Devu_and_his_Brother"><span class="nav-number">4.</span> <span class="nav-text">D. Devu and his Brother</span></a></li></ol>
+      </div>
+    
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">liuxueyang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 - <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT</a>
+</div>
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".fancybox").fancybox();
+    });
+  </script>
+
+  <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+</script>
+
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    sidebatToggleMotion();
+    postsListMotion();
+    backToTopMotion();
+
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      $('.post').velocity('transition.slideDownIn', {stagger: 300, drag: true});
+    }
+
+    function sidebatToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+  
+<script type="text/javascript" id="bootstrap.scrollspy.custom">
+  /* ========================================================================
+  * Bootstrap: scrollspy.js v3.3.2
+  * http://getbootstrap.com/javascript/#scrollspy
+  * ========================================================================
+  * Copyright 2011-2015 Twitter, Inc.
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * ======================================================================== */
+
+  /**
+   * Custom by iissnan
+   *
+   * - Add a `clear.bs.scrollspy` event.
+   * - Esacpe targets selector.
+   */
+
+
+  +function ($) {
+    'use strict';
+
+    // SCROLLSPY CLASS DEFINITION
+    // ==========================
+
+    function ScrollSpy(element, options) {
+      this.$body          = $(document.body)
+      this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+      this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+      this.selector       = (this.options.target || '') + ' .nav li > a'
+      this.offsets        = []
+      this.targets        = []
+      this.activeTarget   = null
+      this.scrollHeight   = 0
+
+      this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+      this.refresh()
+      this.process()
+    }
+
+    ScrollSpy.VERSION  = '3.3.2'
+
+    ScrollSpy.DEFAULTS = {
+      offset: 10
+    }
+
+    ScrollSpy.prototype.getScrollHeight = function () {
+      return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+    }
+
+    ScrollSpy.prototype.refresh = function () {
+      var that          = this
+      var offsetMethod  = 'offset'
+      var offsetBase    = 0
+
+      this.offsets      = []
+      this.targets      = []
+      this.scrollHeight = this.getScrollHeight()
+
+      if (!$.isWindow(this.$scrollElement[0])) {
+        offsetMethod = 'position'
+        offsetBase   = this.$scrollElement.scrollTop()
+      }
+
+      this.$body
+        .find(this.selector)
+        .map(function () {
+          var $el   = $(this)
+          var href  = $el.data('target') || $el.attr('href')
+          var $href = /^#./.test(href) && $(escapeSelector(href)) // Need to escape selector.
+
+          return ($href
+            && $href.length
+            && $href.is(':visible')
+            && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+        })
+        .sort(function (a, b) { return a[0] - b[0] })
+        .each(function () {
+          that.offsets.push(this[0])
+          that.targets.push(this[1])
+        })
+
+
+    }
+
+    ScrollSpy.prototype.process = function () {
+      var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+      var scrollHeight = this.getScrollHeight()
+      var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+      var offsets      = this.offsets
+      var targets      = this.targets
+      var activeTarget = this.activeTarget
+      var i
+
+      if (this.scrollHeight != scrollHeight) {
+        this.refresh()
+      }
+
+      if (scrollTop >= maxScroll) {
+        return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+      }
+
+      if (activeTarget && scrollTop < offsets[0]) {
+        $(this.selector).trigger('clear.bs.scrollspy')  // Add a custom event.
+        this.activeTarget = null
+        return this.clear()
+      }
+
+      for (i = offsets.length; i--;) {
+        activeTarget != targets[i]
+          && scrollTop >= offsets[i]
+          && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+          && this.activate(targets[i])
+      }
+    }
+
+    ScrollSpy.prototype.activate = function (target) {
+      this.activeTarget = target
+
+      this.clear()
+
+      var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href="' + target + '"]'
+
+      var active = $(selector)
+        .parents('li')
+        .addClass('active')
+
+      if (active.parent('.dropdown-menu').length) {
+        active = active
+          .closest('li.dropdown')
+          .addClass('active')
+      }
+
+      active.trigger('activate.bs.scrollspy')
+    }
+
+    ScrollSpy.prototype.clear = function () {
+      $(this.selector)
+        .parentsUntil(this.options.target, '.active')
+        .removeClass('active')
+    }
+
+
+    // SCROLLSPY PLUGIN DEFINITION
+    // ===========================
+
+    function Plugin(option) {
+      return this.each(function () {
+        var $this   = $(this)
+        var data    = $this.data('bs.scrollspy')
+        var options = typeof option == 'object' && option
+
+        if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+        if (typeof option == 'string') data[option]()
+      })
+    }
+
+    var old = $.fn.scrollspy
+
+    $.fn.scrollspy             = Plugin
+    $.fn.scrollspy.Constructor = ScrollSpy
+
+
+    // SCROLLSPY NO CONFLICT
+    // =====================
+
+    $.fn.scrollspy.noConflict = function () {
+      $.fn.scrollspy = old
+      return this
+    }
+
+
+    // SCROLLSPY DATA-API
+    // ==================
+
+    $(window).on('load.bs.scrollspy.data-api', function () {
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this)
+        Plugin.call($spy, $spy.data())
+      })
+    })
+
+  }(jQuery);
+</script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      $tocSelector.scrollPager({
+        max: getTOCMaxHeight()
+      });
+    }
+
+    function getTOCMaxHeight () {
+      // TODO: Make it beautiful
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+        parseInt($sidebarInner.css('padding-top'), 10) -
+        parseInt($sidebarInner.css('padding-bottom'), 10) -
+        $('.sidebar-nav').height() -
+        parseInt($tocSelector.css('margin-top'), 10) -
+        parseInt($tocSelector.css('margin-bottom'), 10);
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+      });
+    }
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      if ($('.post-toc').html().trim().length > 0 && isDesktop()) {
+        setTimeout(function () {
+          $('.sidebar-toggle').trigger('click');
+        }, 800);
+      }
+    });
+  </script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+  
+</body>
+</html>

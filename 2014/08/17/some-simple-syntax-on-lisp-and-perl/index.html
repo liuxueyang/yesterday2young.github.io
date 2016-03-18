@@ -1,0 +1,756 @@
+<!doctype html>
+<html class="theme-next use-motion">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.3.0rc5"/>
+
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.3.0rc5" />
+
+
+
+
+  <title> Some simple syntax on lisp and perl // wonders of the universe </title>
+</head>
+
+<body>
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+    <a href="/" class="brand">
+        <span class="logo">
+          <i class="icon-logo"></i>
+        </span>
+        <span class="site-title">wonders of the universe</span>
+    </a>
+</h1>
+
+
+  <ul id="menu" class="menu">
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首页
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          归档
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          标签
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+            
+          
+
+          <div id="posts" class="posts-expand">
+            
+  
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              Some simple syntax on lisp and perl
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+          <span class="post-time">
+            
+              发表于 2014-08-17
+            
+          </span>
+        
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          <p>I am learning perl and common lisp these days. </p>
+<p>I think perl’s syntax is beautiful and simple and I am getting used to it. I like it very much. I learn it just to do some text tasks. </p>
+<p>Besides, I once thought lisp’s braces are so confusing. I even like those now. It is interesting to write in lisp.</p>
+<p>Here, I place some meaningless codes here to help me remember the syntax in future. ;-)</p>
+<h1 id="Learning_Perl"><em>Learning Perl</em></h1><h2 id="chapter_2">chapter 2</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env perl </span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#         FILE: ch_2.pl</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#        USAGE: ./ch_2.pl  </span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#  DESCRIPTION: no</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#      OPTIONS: ---</span></span><br><span class="line"><span class="comment"># REQUIREMENTS: ---</span></span><br><span class="line"><span class="comment">#         BUGS: ---</span></span><br><span class="line"><span class="comment">#        NOTES: ---</span></span><br><span class="line"><span class="comment">#       AUTHOR: YOUR NAME (), </span></span><br><span class="line"><span class="comment"># ORGANIZATION: </span></span><br><span class="line"><span class="comment">#      VERSION: 1.0</span></span><br><span class="line"><span class="comment">#      CREATED: 08/15/2014 10:27:44 PM</span></span><br><span class="line"><span class="comment">#     REVISION: ---</span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#use strict;</span></span><br><span class="line"><span class="keyword">use</span> warnings;</span><br><span class="line"><span class="keyword">use</span> utf8;</span><br><span class="line"><span class="keyword">use</span> <span class="number">5.010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">say</span> <span class="string">"Hello world!"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"This is a program for Chapter Two"</span>;</span><br><span class="line"><span class="variable">$count</span> = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (<span class="variable">$count</span> &lt; <span class="number">10</span>) &#123;</span><br><span class="line">	<span class="variable">$count</span> += <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"count is now <span class="variable">$count</span>\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$n1</span> = <span class="number">1.25</span>;</span><br><span class="line"><span class="variable">$n1_1</span> = <span class="number">1</span>.;</span><br><span class="line"><span class="variable">$n2</span> = -<span class="number">1.2</span>e-<span class="number">23</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"n1 = <span class="variable">$n1</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"n2 = <span class="variable">$n2</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"n1_1 = <span class="variable">$n1_1</span>"</span>;</span><br><span class="line"><span class="variable">$n3</span> = <span class="number">61_298_040_283_768</span>;</span><br><span class="line"><span class="variable">$n4</span> = <span class="number">0xff</span>;</span><br><span class="line"><span class="variable">$n5</span> = <span class="number">0377</span>;</span><br><span class="line"><span class="variable">$n6</span> = 0b11111111;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"n3 = <span class="variable">$n3</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"n4 = <span class="variable">$n4</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"n5 = <span class="variable">$n5</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"n6 = <span class="variable">$n6</span>"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"Hello and "</span> . <span class="string">"world\n"</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"fred "</span> <span class="keyword">x</span> <span class="number">3</span> . <span class="string">"\n"</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="number">5</span> <span class="keyword">x</span> <span class="number">4.8</span> . <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"The answer is "</span>, <span class="number">6</span> * <span class="number">7</span>, <span class="string">".\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$meal</span> = <span class="string">"bronto saurus steak"</span>;</span><br><span class="line"><span class="variable">$barney</span> = <span class="string">"fred ate a <span class="variable">$meal</span>"</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="variable">$barney</span> . <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">'The barney is $barney'</span> . <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$que</span> = <span class="keyword">ord</span>(<span class="string">'?'</span>);</span><br><span class="line"><span class="keyword">print</span> <span class="string">"que is <span class="variable">$que</span>\n"</span>;</span><br><span class="line"><span class="variable">$Que</span> = <span class="keyword">chr</span>(<span class="variable">$que</span>);</span><br><span class="line"><span class="keyword">print</span> <span class="string">"que is <span class="variable">$Que</span>\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$name</span> = <span class="string">"wred"</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$name</span> <span class="keyword">gt</span> <span class="string">'fred'</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"'<span class="variable">$name</span>' comes afger 'fred' in sorted order.\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (! <span class="string">'0'</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"'0' is false!\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$still_true</span> = !! <span class="string">'Fred'</span>;</span><br><span class="line"><span class="variable">$still_false</span> = !! <span class="string">'0'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"still_true is <span class="variable">$still_true</span>\n"</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"still_false is <span class="variable">$still_false</span>\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$mul_line</span> = <span class="string">"This is multiple</span><br><span class="line">line\n"</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"multiple line is the Following:<span class="variable">$mul_line</span>"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#$line = &lt;STDIN&gt;;</span></span><br><span class="line"><span class="variable">$line</span> = <span class="string">"Hi\n"</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$line</span> eq <span class="string">"\n"</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"Thas was just a blank line.\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"That line of input was: <span class="variable">$line</span>"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#$text = &lt;STDIN&gt;;</span></span><br><span class="line"><span class="comment">#chomp($text = &lt;STDIN&gt;);</span></span><br><span class="line"><span class="comment">#print "text = $text\n";</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$n</span> = <span class="number">1</span>;</span><br><span class="line"><span class="variable">$sum</span> = <span class="keyword">undef</span>;</span><br><span class="line"><span class="keyword">while</span> (<span class="variable">$n</span> &lt; <span class="number">10</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="variable">$sum</span> += <span class="variable">$n</span>;</span><br><span class="line">	<span class="variable">$n</span> += <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"The total was <span class="variable">$sum</span>.\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$un_define</span> = <span class="keyword">undef</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"un_define is &lt;<span class="variable">$un_define</span>&gt;\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$madonna</span> = &lt;STDIN&gt;;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">defined</span>(<span class="variable">$madonna</span>)) </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"The input was <span class="variable">$madonna</span>"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"No input available!\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"This is the last line.\n"</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="chapter_3">chapter 3</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env perl </span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#         FILE: ch_3.pl</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#        USAGE: ./ch_3.pl  </span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#  DESCRIPTION: just for test some perl's grammer</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#      OPTIONS: ---</span></span><br><span class="line"><span class="comment"># REQUIREMENTS: ---</span></span><br><span class="line"><span class="comment">#         BUGS: ---</span></span><br><span class="line"><span class="comment">#        NOTES: ---</span></span><br><span class="line"><span class="comment">#       AUTHOR: YOUR NAME (), </span></span><br><span class="line"><span class="comment"># ORGANIZATION: </span></span><br><span class="line"><span class="comment">#      VERSION: 1.0</span></span><br><span class="line"><span class="comment">#      CREATED: 08/16/2014 04:52:51 PM</span></span><br><span class="line"><span class="comment">#     REVISION: ---</span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#use strict;</span></span><br><span class="line"><span class="keyword">use</span> warnings;</span><br><span class="line"><span class="keyword">use</span> utf8;</span><br><span class="line"><span class="keyword">use</span> <span class="number">5.010</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$fred</span>[<span class="number">0</span>] = <span class="string">"yabba"</span>;</span><br><span class="line"><span class="variable">$fred</span>[<span class="number">1</span>] = <span class="string">"dabba"</span>;</span><br><span class="line"><span class="variable">$fred</span>[<span class="number">2</span>] = <span class="string">"doo"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="variable">$fred</span>[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">say</span> <span class="variable">$fred</span>[<span class="number">1</span>];</span><br><span class="line"><span class="keyword">say</span> <span class="variable">$fred</span>[<span class="number">2</span>];</span><br><span class="line"><span class="variable">$fred</span>[<span class="number">2</span>] .= <span class="string">"diddley"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="variable">$fred</span>[<span class="number">2</span>];</span><br><span class="line"><span class="variable">$fred</span>[<span class="number">5</span>] = <span class="string">"Fifth"</span>;</span><br><span class="line"><span class="variable">$i</span> = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (<span class="variable">$i</span> &lt;= <span class="number">5</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">defined</span>(<span class="variable">$fred</span>[<span class="variable">$i</span>])) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">say</span> <span class="string">"<span class="variable">$i</span> == &gt; "</span>, <span class="variable">$fred</span>[<span class="variable">$i</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">say</span> <span class="string">"does not exist!"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="variable">$i</span> += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"There are <span class="variable">$#fred</span> elements in fred array."</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">@lst</span> = (<span class="number">2</span>..<span class="number">5</span>);</span><br><span class="line"><span class="keyword">say</span> <span class="variable">@lst</span>;</span><br><span class="line"><span class="variable">@lst</span> = <span class="number">2</span>..<span class="number">5</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="variable">@lst</span>;</span><br><span class="line"><span class="variable">@lst</span> = <span class="string">qw(fred barney bety wilma dino)</span>;</span><br><span class="line"><span class="comment">#say @lst;</span></span><br><span class="line"></span><br><span class="line">(<span class="variable">$fred</span>, <span class="variable">$barney</span>, <span class="variable">$dino</span>) = <span class="keyword">qw</span> / flintstone, rubble, <span class="keyword">undef</span> /;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"fred = "</span>, <span class="variable">$fred</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"barney = "</span>, <span class="variable">$barney</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"dino = "</span>, <span class="variable">$dino</span>;</span><br><span class="line">(<span class="variable">$fred</span>, <span class="variable">$barney</span>) = (<span class="variable">$barney</span>, <span class="variable">$fred</span>);</span><br><span class="line"><span class="keyword">say</span> <span class="string">"fred = "</span>, <span class="variable">$fred</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"barney = "</span>, <span class="variable">$barney</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">defined</span>(<span class="variable">$dino</span>))</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">say</span> <span class="string">"dino is defined"</span>;</span><br><span class="line">&#125;</span><br><span class="line">(<span class="variable">$fred</span>, <span class="variable">$dino</span>) = (<span class="string">"FRED"</span>, <span class="keyword">undef</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">defined</span>(<span class="variable">$dino</span>))</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">say</span> <span class="string">"dino is defined"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">say</span> <span class="string">"dino is not defined"</span>;</span><br><span class="line">&#125;</span><br><span class="line">(<span class="variable">$rocks</span>[<span class="number">0</span>], <span class="variable">$rocks</span>[<span class="number">1</span>], <span class="variable">$rocks</span>[<span class="number">2</span>], <span class="variable">$rocks</span>[<span class="number">3</span>]) = </span><br><span class="line"><span class="keyword">qw</span> / talc</span><br><span class="line">	mica</span><br><span class="line">	feldspar</span><br><span class="line">	quartz</span><br><span class="line">	/;</span><br><span class="line"><span class="variable">@giant</span> = <span class="number">1</span>..<span class="number">5</span>;</span><br><span class="line"><span class="variable">@stuff</span> = (<span class="variable">@giant</span>, <span class="keyword">undef</span>, <span class="variable">@giant</span>);</span><br><span class="line"><span class="variable">$dino</span> = <span class="string">"granite"</span>;</span><br><span class="line"><span class="variable">@tiny</span> = ();</span><br><span class="line"><span class="variable">@quarry</span> = (<span class="variable">@rocks</span>, <span class="string">"crushed rock"</span>, <span class="variable">@tiny</span>, <span class="variable">$dino</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">@copy</span> = <span class="variable">@quarry</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">@array</span> = <span class="number">5</span>..<span class="number">9</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"<span class="variable">@array</span>"</span>;</span><br><span class="line"><span class="variable">$fred</span> = <span class="keyword">pop</span> <span class="variable">@array</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"<span class="variable">@array</span>"</span>;</span><br><span class="line"><span class="keyword">push</span> <span class="variable">@array</span>, <span class="number">11</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"<span class="variable">@array</span>"</span>;</span><br><span class="line"><span class="keyword">push</span> <span class="variable">@array</span>, <span class="variable">@giant</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"<span class="variable">@array</span>"</span>;</span><br><span class="line"><span class="variable">$m</span> = <span class="keyword">shift</span> <span class="variable">@array</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"m = "</span>, <span class="variable">$m</span>;</span><br><span class="line"><span class="variable">$m</span> = <span class="keyword">shift</span> <span class="variable">@array</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"m = "</span>, <span class="variable">$m</span>;</span><br><span class="line"><span class="keyword">unshift</span> <span class="variable">@array</span>, kk;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"<span class="variable">@array</span>"</span>;</span><br><span class="line"><span class="variable">@removed</span> = <span class="keyword">splice</span> <span class="variable">@array</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="variable">$m</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"removed = <span class="variable">@removed</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"array = <span class="variable">@array</span>"</span>;</span><br><span class="line"><span class="variable">$y</span> = <span class="string">"2*4"</span>;</span><br><span class="line"><span class="variable">$y</span> = <span class="string">"2"</span>;</span><br><span class="line"><span class="variable">$y</span> -= <span class="number">1</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"y = <span class="variable">$y</span>"</span>;</span><br><span class="line"><span class="variable">$array</span>=<span class="string">"kiss"</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"this is <span class="subst">$&#123;array&#125;</span>[0]\n"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"This is <span class="variable">$array</span>[0]"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">say</span> <span class="string">"rocks = <span class="variable">@rocks</span>"</span>;</span><br><span class="line"><span class="variable">$rock</span> = <span class="string">"This is origin rock..."</span>;</span><br><span class="line"><span class="keyword">foreach</span> <span class="variable">$rock</span> (<span class="variable">@rocks</span>) &#123;</span><br><span class="line">	<span class="variable">$rock</span> = <span class="string">"\t<span class="variable">$rock</span>"</span>;</span><br><span class="line">	<span class="variable">$rock</span> .= <span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"the Rocks are:\n"</span>, <span class="variable">@rocks</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"Now, Rock is <span class="variable">$rock</span>"</span>;</span><br><span class="line"><span class="variable">$_</span> = <span class="string">"Yabba dabba doo\n"</span>;</span><br><span class="line"><span class="keyword">print</span>;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="number">1</span>..<span class="number">5</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"I can count to <span class="variable">$_</span>!\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">print</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"rocks == &gt;\n<span class="variable">@rocks</span>"</span>;</span><br><span class="line"><span class="variable">@rocks</span> = <span class="keyword">reverse</span> <span class="variable">@rocks</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"rocks == &gt;\n <span class="variable">@rocks</span>"</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">@rocks</span> = <span class="keyword">qw</span> /</span><br><span class="line">	bedrock</span><br><span class="line">	slate</span><br><span class="line">	rubble</span><br><span class="line">	granite</span><br><span class="line">	/;</span><br><span class="line"><span class="variable">@sort_rocks</span> = <span class="keyword">sort</span> <span class="variable">@rocks</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"rocks = <span class="variable">@rocks</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"sort_rocks = <span class="variable">@sort_rocks</span>"</span>;</span><br><span class="line"><span class="keyword">while</span> ((<span class="variable">$index</span>, <span class="variable">$value</span>) = <span class="keyword">each</span> <span class="variable">@rocks</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">say</span> <span class="string">"<span class="variable">$index</span>: <span class="variable">$value</span>"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">@people</span> = <span class="keyword">qw</span> / fred barney betty /;</span><br><span class="line"><span class="variable">@people_sorted</span> = <span class="keyword">sort</span> <span class="variable">@people</span>;</span><br><span class="line"><span class="variable">$number</span> = <span class="number">42</span> + <span class="variable">@people</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"people is: <span class="variable">@people</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"people_sorted is: <span class="variable">@people_sorted</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"number = <span class="variable">$number</span>"</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$backwards</span> = <span class="keyword">reverse</span> <span class="keyword">qw</span> / a b c d /;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"backwards is: <span class="variable">$backwards</span>"</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">@fred</span> = <span class="number">6</span> * <span class="number">7</span>;</span><br><span class="line"><span class="variable">@barney</span> = ( <span class="string">"hello"</span> , <span class="string">' '</span> , <span class="string">"world"</span> );</span><br><span class="line"><span class="keyword">say</span> <span class="string">"fred = <span class="variable">@fred</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"barney = <span class="variable">@barney</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"This is the last line of the program."</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">@rocks</span> = <span class="keyword">qw</span> / aa bb cc dd /;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"rocks = <span class="variable">@rocks</span>"</span>;</span><br><span class="line"><span class="keyword">say</span> <span class="string">"How many rocks do you have?"</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"I have "</span>, <span class="keyword">scalar</span> <span class="variable">@rocks</span>, <span class="string">" rocks!\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">chomp</span>(<span class="variable">@lines</span> = &lt;STDIN&gt;);</span><br><span class="line"><span class="comment">#@lines = &lt;STDIN&gt;;</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"lines is:\n<span class="variable">@lines</span>"</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="chapter_4">chapter 4</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env perl </span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#         FILE: ch_4.pl</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#        USAGE: ./ch_4.pl  </span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#  DESCRIPTION: no</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#      OPTIONS: ---</span></span><br><span class="line"><span class="comment"># REQUIREMENTS: ---</span></span><br><span class="line"><span class="comment">#         BUGS: ---</span></span><br><span class="line"><span class="comment">#        NOTES: ---</span></span><br><span class="line"><span class="comment">#       AUTHOR: YOUR NAME (), </span></span><br><span class="line"><span class="comment"># ORGANIZATION: </span></span><br><span class="line"><span class="comment">#      VERSION: 1.0</span></span><br><span class="line"><span class="comment">#      CREATED: 08/16/2014 11:09:22 PM</span></span><br><span class="line"><span class="comment">#     REVISION: ---</span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#use strict;</span></span><br><span class="line"><span class="keyword">use</span> warnings;</span><br><span class="line"><span class="keyword">use</span> utf8;</span><br><span class="line"><span class="keyword">use</span> <span class="number">5.010</span>;</span><br><span class="line"></span><br><span class="line"><span class="sub"><span class="keyword">sub</span> marine</span><br><span class="line">&#123;</span></span><br><span class="line">	<span class="variable">$n</span> += <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"Hello, sailor number <span class="variable">$n</span>\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&amp;marine();</span><br><span class="line">&amp;marine();</span><br><span class="line">&amp;marine();</span><br><span class="line">&amp;marine();</span><br><span class="line"></span><br><span class="line"><span class="variable">$fred</span> = <span class="number">3</span>;</span><br><span class="line"><span class="variable">$barney</span> = <span class="number">4</span>;</span><br><span class="line"><span class="variable">$wilma</span> = &amp;sum_of_fred_and_barney;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"\$wilma is <span class="variable">$wilma</span>.\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$betty</span> = &amp;sum_of_fred_and_barney * <span class="number">3</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"\$wilma is <span class="variable">$betty</span>.\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="sub"><span class="keyword">sub</span> sum_of_fred_and_barney</span><br><span class="line">&#123;</span></span><br><span class="line">	<span class="keyword">print</span> <span class="string">"Hey, you called the sum_of_fred_and_barney subroutine!\n"</span>;</span><br><span class="line">	<span class="variable">$fred</span> + <span class="variable">$barney</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="sub"><span class="keyword">sub</span> max</span><br><span class="line">&#123;</span></span><br><span class="line"><span class="comment">#	my ($m, $n);</span></span><br><span class="line"><span class="comment">#	($m, $n) = @_;</span></span><br><span class="line"><span class="comment">#	my ($m, $n) = @_;</span></span><br><span class="line"><span class="comment">#	if ($m &gt; $n) &#123;</span></span><br><span class="line"><span class="comment">#		$m;</span></span><br><span class="line"><span class="comment">#	&#125;</span></span><br><span class="line"><span class="comment">#	else &#123;</span></span><br><span class="line"><span class="comment">#		$n;</span></span><br><span class="line"><span class="comment">#	&#125;</span></span><br><span class="line">	<span class="keyword">my</span> (<span class="variable">$max_so_far</span>) = <span class="keyword">shift</span> <span class="variable">@_</span>;</span><br><span class="line">	<span class="keyword">foreach</span> (<span class="variable">@_</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="variable">$_</span> &gt; <span class="variable">$max_so_far</span>) &#123;</span><br><span class="line">			<span class="variable">$max_so_far</span> = <span class="variable">$_</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="variable">$max_so_far</span>;</span><br><span class="line"><span class="comment">#	if ($_[0] &gt; $_[1]) &#123;</span></span><br><span class="line"><span class="comment">#		$_[0];</span></span><br><span class="line"><span class="comment">#	&#125; else &#123;</span></span><br><span class="line"><span class="comment">#		$_[1];</span></span><br><span class="line"><span class="comment">#	&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$n</span> = &amp;max(<span class="number">10</span>, <span class="number">15</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">100</span>, <span class="number">101</span>);</span><br><span class="line"><span class="keyword">print</span> <span class="string">"n = <span class="variable">$n</span>\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> (<span class="number">1</span>..<span class="number">5</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">my</span> (<span class="variable">$square</span>) = <span class="variable">$_</span> * <span class="variable">$_</span>;</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"<span class="variable">$_</span> squared is <span class="variable">$square</span>.\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">my</span> <span class="variable">@names</span> = <span class="keyword">qw</span> / fred barney betty dino wilma pebbles</span><br><span class="line">		bamm-bamm/;</span><br><span class="line"><span class="keyword">my</span> <span class="variable">$result</span> = &amp;which_element_is(<span class="string">"dino"</span>, <span class="variable">@names</span>);</span><br><span class="line"><span class="sub"><span class="keyword">sub</span> which_element_is</span><br><span class="line">&#123;</span></span><br><span class="line">	<span class="keyword">my</span> (<span class="variable">$what</span>, <span class="variable">@array</span>) = <span class="variable">@_</span>;</span><br><span class="line">	<span class="keyword">foreach</span> (<span class="number">0</span>..<span class="variable">$#array</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="variable">$what</span> eq <span class="variable">$array</span>[<span class="variable">$_</span>]) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="variable">$_</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	-<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"index is: <span class="variable">$result</span>.\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="sub"><span class="keyword">sub</span> chomp </span><br><span class="line">&#123;</span></span><br><span class="line">	<span class="keyword">print</span> <span class="string">"Muuch, muuch!\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&amp;<span class="keyword">chomp</span>;</span><br><span class="line"></span><br><span class="line"><span class="sub"><span class="keyword">sub</span> gene_list</span><br><span class="line">&#123;</span></span><br><span class="line">	<span class="keyword">my</span> (<span class="variable">$a</span>, <span class="variable">$b</span>) = <span class="variable">@_</span>;</span><br><span class="line">	<span class="keyword">if</span> (<span class="variable">$a</span> &lt; <span class="variable">$b</span>) &#123;</span><br><span class="line">		<span class="variable">$a</span>..<span class="variable">$b</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">reverse</span> <span class="variable">$b</span>..<span class="variable">$a</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">my</span> <span class="variable">@re</span> = &amp;gene_list(<span class="number">10</span>, <span class="number">6</span>);</span><br><span class="line"><span class="keyword">say</span> <span class="string">"<span class="variable">@re</span>"</span>;</span><br><span class="line"><span class="keyword">my</span> <span class="variable">@se</span> = &amp;gene_list(<span class="number">6</span>, <span class="number">10</span>);</span><br><span class="line"><span class="keyword">say</span> <span class="string">"<span class="variable">@se</span>"</span>;</span><br><span class="line"></span><br><span class="line"><span class="sub"><span class="keyword">sub</span> marine </span><br><span class="line">&#123;</span></span><br><span class="line">	<span class="keyword">state</span> <span class="variable">$n</span> = <span class="number">0</span>;</span><br><span class="line">	<span class="variable">$n</span> += <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">say</span> <span class="string">"Hello, sailor number <span class="variable">$n</span>!"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&amp;marine;</span><br><span class="line">&amp;marine;</span><br><span class="line">&amp;marine;</span><br><span class="line"></span><br><span class="line"><span class="sub"><span class="keyword">sub</span> running_sum </span><br><span class="line">&#123;</span></span><br><span class="line">	<span class="keyword">state</span> <span class="variable">$sum</span> = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">state</span> <span class="variable">@numbers</span> ;</span><br><span class="line">	<span class="keyword">foreach</span> <span class="keyword">my</span> <span class="variable">$number</span> (<span class="variable">@_</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">push</span> <span class="variable">@numbers</span>, <span class="variable">$number</span>;</span><br><span class="line">		<span class="variable">$sum</span> += <span class="variable">$number</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">say</span> <span class="string">"The sum of (<span class="variable">@numbers</span>) is <span class="variable">$sum</span>"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">running_sum(<span class="number">5</span>, <span class="number">6</span>);</span><br><span class="line">running_sum(<span class="number">1</span>..<span class="number">3</span>);</span><br><span class="line">running_sum(<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="ANSI_Common_Lisp"><em>ANSI Common Lisp</em></h1><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword"><span class="built_in">let</span></span> <span class="list">(<span class="list">(<span class="keyword">x</span> <span class="number">1</span>)</span> <span class="list">(<span class="keyword">y</span> <span class="number">2</span>)</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">+</span></span> x y)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> ask-number <span class="list">()</span></span><br><span class="line"> <span class="list">(<span class="keyword">format</span> t <span class="string">"Please enter a number."</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">let</span></span> <span class="list">(<span class="list">(<span class="keyword">val</span> <span class="list">(<span class="keyword"><span class="built_in">read</span></span>)</span>)</span>)</span></span><br><span class="line">	<span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">numberp</span> val)</span></span><br><span class="line">	 val</span><br><span class="line">	 <span class="list">(<span class="keyword">ask-number</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defparameter</span> *glob* <span class="number">99</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defconstant</span> limit <span class="list">(<span class="keyword"><span class="built_in">+</span></span> *glob* <span class="number">1</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setf</span> *glob* <span class="number">98</span>)</span> </span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword"><span class="built_in">let</span></span> <span class="list">(<span class="list">(<span class="keyword">n</span> <span class="number">10</span>)</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword">setf</span> n <span class="number">2</span>)</span></span><br><span class="line"> n)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setf</span> x <span class="list">(<span class="keyword"><span class="built_in">list</span></span> <span class="variable">'a</span> <span class="variable">'b</span> <span class="variable">'c</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setf</span> <span class="list">(<span class="keyword"><span class="built_in">car</span></span> x)</span> <span class="variable">'n</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setf</span> a <span class="variable">'b</span> </span><br><span class="line"> 			c <span class="variable">'d</span></span><br><span class="line">			e <span class="variable">'f</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setf</span> lst '<span class="list">(<span class="keyword">c</span> a r a t)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">remove</span> <span class="variable">'a</span> lst)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setf</span> x <span class="list">(<span class="keyword">remove</span> <span class="variable">'a</span> x)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> show-squares <span class="list">(<span class="keyword">start</span> end)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">do</span></span> <span class="list">(<span class="list">(<span class="keyword">i</span> start <span class="list">(<span class="keyword"><span class="built_in">+</span></span> i <span class="number">1</span>)</span>)</span>)</span></span><br><span class="line">	<span class="list">(<span class="list">(<span class="keyword"><span class="built_in">&gt;</span></span> i end)</span> <span class="variable">'done</span>)</span></span><br><span class="line">	<span class="list">(<span class="keyword">format</span> t <span class="string">"~A ~A ~%"</span> i <span class="list">(<span class="keyword"><span class="built_in">*</span></span> i i)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> show-squares-1 <span class="list">(<span class="keyword">i</span> end)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword"><span class="built_in">&gt;</span></span> i end)</span></span><br><span class="line">	<span class="variable">'done</span></span><br><span class="line">	<span class="list">(<span class="keyword">progn</span></span><br><span class="line">	 <span class="list">(<span class="keyword">format</span> t <span class="string">"~A ~A ~%"</span> i <span class="list">(<span class="keyword"><span class="built_in">*</span></span> i i)</span>)</span></span><br><span class="line">	 <span class="list">(<span class="keyword">show-squares-1</span> <span class="list">(<span class="keyword"><span class="built_in">+</span></span> i <span class="number">1</span>)</span> end)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> our-length <span class="list">(<span class="keyword">lst</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">let</span></span> <span class="list">(<span class="list">(<span class="keyword">len</span> <span class="number">0</span>)</span>)</span></span><br><span class="line">	<span class="list">(<span class="keyword">dolist</span> <span class="list">(<span class="keyword">obj</span> lst)</span></span><br><span class="line">	 <span class="list">(<span class="keyword">setf</span> len <span class="list">(<span class="keyword"><span class="built_in">+</span></span> len <span class="number">1</span>)</span>)</span>)</span></span><br><span class="line">	len)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> our-length-1 <span class="list">(<span class="keyword">lst</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">null</span> lst)</span></span><br><span class="line">	<span class="number">0</span></span><br><span class="line">	<span class="list">(<span class="keyword"><span class="built_in">+</span></span> <span class="number">1</span> <span class="list">(<span class="keyword">our-length-1</span> <span class="list">(<span class="keyword"><span class="built_in">cdr</span></span> lst)</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> our-listp <span class="list">(<span class="keyword">x</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">or</span></span> <span class="list">(<span class="keyword">null</span> x)</span> <span class="list">(<span class="keyword">consp</span> x)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> our-atom <span class="list">(<span class="keyword">x</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">not</span></span> <span class="list">(<span class="keyword">consp</span> x)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setf</span> x '<span class="list">(<span class="keyword">a</span> b c)</span></span><br><span class="line"> 			y <span class="list">(<span class="keyword">copy-list</span> x)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> n-elt <span class="list">(<span class="keyword">n</span> elt)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword"><span class="built_in">&gt;</span></span> n <span class="number">1</span>)</span></span><br><span class="line">	<span class="list">(<span class="keyword"><span class="built_in">list</span></span> n elt)</span></span><br><span class="line">	elt)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> compr <span class="list">(<span class="keyword">current</span> num rst)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">null</span> rst)</span></span><br><span class="line">	<span class="list">(<span class="keyword"><span class="built_in">list</span></span> <span class="list">(<span class="keyword">n-elt</span> num current)</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">eql</span> current <span class="list">(<span class="keyword"><span class="built_in">car</span></span> rst)</span>)</span></span><br><span class="line">	<span class="list">(<span class="keyword">compr</span> current <span class="list">(<span class="keyword"><span class="built_in">+</span></span> <span class="number">1</span> num)</span> <span class="list">(<span class="keyword"><span class="built_in">cdr</span></span> rst)</span>)</span></span><br><span class="line">	<span class="list">(<span class="keyword"><span class="built_in">cons</span></span> <span class="list">(<span class="keyword">n-elt</span> num current)</span> <span class="list">(<span class="keyword">compr</span> <span class="list">(<span class="keyword"><span class="built_in">car</span></span> rst)</span> <span class="number">1</span> <span class="list">(<span class="keyword"><span class="built_in">cdr</span></span> rst)</span>)</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> his-compr <span class="list">(<span class="keyword">elt</span> n lst)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">null</span> lst)</span></span><br><span class="line">	<span class="list">(<span class="keyword"><span class="built_in">list</span></span> <span class="list">(<span class="keyword">n-elts</span> elt n)</span>)</span></span><br><span class="line">	<span class="list">(<span class="keyword"><span class="built_in">let</span></span> <span class="list">(<span class="list">(<span class="keyword">next</span> <span class="list">(<span class="keyword"><span class="built_in">car</span></span> lst)</span>)</span>)</span></span><br><span class="line">	 <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">eql</span> next elt)</span></span><br><span class="line">		<span class="list">(<span class="keyword">his-compr</span> elt <span class="list">(<span class="keyword"><span class="built_in">+</span></span> <span class="number">1</span> n)</span> <span class="list">(<span class="keyword"><span class="built_in">cdr</span></span> lst)</span>)</span></span><br><span class="line">		<span class="list">(<span class="keyword"><span class="built_in">cons</span></span> <span class="list">(<span class="keyword">n-elts</span> elt n)</span></span><br><span class="line">		 <span class="list">(<span class="keyword">his-compr</span> next <span class="number">1</span> <span class="list">(<span class="keyword"><span class="built_in">cdr</span></span> lst)</span>)</span>)</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> compress <span class="list">(<span class="keyword">lst</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">null</span> lst)</span></span><br><span class="line">	nil</span><br><span class="line">	<span class="list">(<span class="keyword">compr</span> <span class="list">(<span class="keyword"><span class="built_in">car</span></span> lst)</span> <span class="number">1</span> <span class="list">(<span class="keyword"><span class="built_in">cdr</span></span> lst)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> his-compress <span class="list">(<span class="keyword">x</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">consp</span> x)</span></span><br><span class="line">	<span class="list">(<span class="keyword">his-compr</span> <span class="list">(<span class="keyword"><span class="built_in">car</span></span> x)</span> <span class="number">1</span> <span class="list">(<span class="keyword"><span class="built_in">cdr</span></span> x)</span>)</span></span><br><span class="line">	x)</span>)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> n-elts <span class="list">(<span class="keyword">elt</span> n)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword"><span class="built_in">&gt;</span></span> n <span class="number">1</span>)</span></span><br><span class="line">	<span class="list">(<span class="keyword"><span class="built_in">list</span></span> n elt)</span></span><br><span class="line">	elt)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setf</span> lst '<span class="list">(<span class="keyword">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> list-of <span class="list">(<span class="keyword">num</span> cur)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">zerop</span> num)</span></span><br><span class="line">	nil</span><br><span class="line">	<span class="list">(<span class="keyword"><span class="built_in">cons</span></span> cur <span class="list">(<span class="keyword">list-of</span> <span class="list">(<span class="keyword"><span class="built_in">-</span></span> num <span class="number">1</span>)</span> cur)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> uncompress <span class="list">(<span class="keyword">lst</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">null</span> lst)</span></span><br><span class="line">	nil</span><br><span class="line">	<span class="list">(<span class="keyword"><span class="built_in">let</span></span> <span class="list">(<span class="list">(<span class="keyword">current</span> <span class="list">(<span class="keyword"><span class="built_in">car</span></span> lst)</span>)</span>)</span></span><br><span class="line">	 <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">listp</span> current)</span></span><br><span class="line">		<span class="list">(<span class="keyword"><span class="built_in">append</span></span> <span class="list">(<span class="keyword">list-of</span> <span class="list">(<span class="keyword"><span class="built_in">car</span></span> current)</span> <span class="list">(<span class="keyword">second</span> current)</span>)</span></span><br><span class="line">		 <span class="list">(<span class="keyword">uncompress</span> <span class="list">(<span class="keyword"><span class="built_in">cdr</span></span> lst)</span>)</span>)</span></span><br><span class="line">		<span class="list">(<span class="keyword"><span class="built_in">cons</span></span> current <span class="list">(<span class="keyword">uncompress</span> <span class="list">(<span class="keyword"><span class="built_in">cdr</span></span> lst)</span>)</span>)</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> his-uncompress <span class="list">(<span class="keyword">lst</span>)</span></span><br><span class="line"> <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">null</span> lst)</span></span><br><span class="line">	nil</span><br><span class="line">	<span class="list">(<span class="keyword"><span class="built_in">let</span></span> <span class="list">(<span class="list">(<span class="keyword">elt</span> <span class="list">(<span class="keyword"><span class="built_in">car</span></span> lst)</span>)</span></span><br><span class="line">				<span class="list">(<span class="keyword">rest</span> <span class="list">(<span class="keyword">his-uncompress</span> <span class="list">(<span class="keyword"><span class="built_in">cdr</span></span> lst)</span>)</span>)</span>)</span></span><br><span class="line">	 <span class="list">(<span class="keyword"><span class="built_in">if</span></span> <span class="list">(<span class="keyword">consp</span> elt)</span></span><br><span class="line">		<span class="list">(<span class="keyword"><span class="built_in">append</span></span> <span class="list">(<span class="keyword"><span class="built_in">apply</span></span> #<span class="variable">'list-of</span> elt)</span> rest)</span></span><br><span class="line">		<span class="list">(<span class="keyword"><span class="built_in">cons</span></span> elt rest)</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setf</span> lst-c '<span class="list">(<span class="list">(<span class="keyword">3</span> <span class="number">1</span>)</span> <span class="number">0</span> <span class="number">1</span> <span class="list">(<span class="keyword">4</span> <span class="number">0</span>)</span> <span class="number">1</span> <span class="list">(<span class="keyword">2</span> <span class="number">2</span>)</span> <span class="number">3</span>)</span>)</span></span><br></pre></td></tr></table></figure>
+<p>BTW, it feels great to write lisp in vim. I CAN NOT STAND EMACS AT LAST!</p>
+<p>One more thing, I remove those articles whose title are /run-[0-9]/ (RE;-) and backup them on my computer. Maybe I should write more blogs about techniques instead of complaining or those about myself.</p>
+<p>Good night.<br>18/08/2014 00:22 AM</p>
+
+        
+
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Common-Lisp/">
+                #Common Lisp
+              </a>
+            
+          </div>
+        
+
+        
+          <div class="post-nav">
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2014/09/18/hey,recently/">Hey,recently</a>
+              
+            </div>
+
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2014/08/08/run-9/">run-9</a>
+              
+            </div>
+          </div>
+        
+
+        
+        
+      </div>
+    
+  </div>
+
+
+
+  
+    <div class="comments" id="comments">
+      
+    </div>
+  
+
+          </div>
+
+          
+        </div>
+
+        
+<div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+    
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview">
+          站点概览
+        </li>
+      </ul>
+    
+
+    <div class="site-overview">
+      <div class="site-author motion-element">
+        <img class="site-author-image" src="/images/default_avatar.jpg" alt="liuxueyang" />
+        <p class="site-author-name">liuxueyang</p>
+      </div>
+      <p class="site-description motion-element"></p>
+      <div class="site-state motion-element">
+        <div class="site-state-item site-state-posts">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </div>
+        <div class="site-state-item site-state-tags">
+            <span class="site-state-item-count">11</span>
+            <span class="site-state-item-name">标签</span>
+        </div>
+        <div class="site-state-item site-state-pages">
+            <span class="site-state-item-count">0</span>
+            <span class="site-state-item-name">页面</span>
+        </div>
+      </div>
+
+      
+
+      <div class="social-info motion-element">
+        
+      </div>
+
+    </div>
+
+    
+      <div class="post-toc sidebar-panel-active">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Learning_Perl"><span class="nav-number">1.</span> <span class="nav-text">Learning Perl</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter_2"><span class="nav-number">1.1.</span> <span class="nav-text">chapter 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter_3"><span class="nav-number">1.2.</span> <span class="nav-text">chapter 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter_4"><span class="nav-number">1.3.</span> <span class="nav-text">chapter 4</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ANSI_Common_Lisp"><span class="nav-number">2.</span> <span class="nav-text">ANSI Common Lisp</span></a></li></ol>
+      </div>
+    
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">liuxueyang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 - <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT</a>
+</div>
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".fancybox").fancybox();
+    });
+  </script>
+
+  <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+</script>
+
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    sidebatToggleMotion();
+    postsListMotion();
+    backToTopMotion();
+
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      $('.post').velocity('transition.slideDownIn', {stagger: 300, drag: true});
+    }
+
+    function sidebatToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+  
+<script type="text/javascript" id="bootstrap.scrollspy.custom">
+  /* ========================================================================
+  * Bootstrap: scrollspy.js v3.3.2
+  * http://getbootstrap.com/javascript/#scrollspy
+  * ========================================================================
+  * Copyright 2011-2015 Twitter, Inc.
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * ======================================================================== */
+
+  /**
+   * Custom by iissnan
+   *
+   * - Add a `clear.bs.scrollspy` event.
+   * - Esacpe targets selector.
+   */
+
+
+  +function ($) {
+    'use strict';
+
+    // SCROLLSPY CLASS DEFINITION
+    // ==========================
+
+    function ScrollSpy(element, options) {
+      this.$body          = $(document.body)
+      this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+      this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+      this.selector       = (this.options.target || '') + ' .nav li > a'
+      this.offsets        = []
+      this.targets        = []
+      this.activeTarget   = null
+      this.scrollHeight   = 0
+
+      this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+      this.refresh()
+      this.process()
+    }
+
+    ScrollSpy.VERSION  = '3.3.2'
+
+    ScrollSpy.DEFAULTS = {
+      offset: 10
+    }
+
+    ScrollSpy.prototype.getScrollHeight = function () {
+      return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+    }
+
+    ScrollSpy.prototype.refresh = function () {
+      var that          = this
+      var offsetMethod  = 'offset'
+      var offsetBase    = 0
+
+      this.offsets      = []
+      this.targets      = []
+      this.scrollHeight = this.getScrollHeight()
+
+      if (!$.isWindow(this.$scrollElement[0])) {
+        offsetMethod = 'position'
+        offsetBase   = this.$scrollElement.scrollTop()
+      }
+
+      this.$body
+        .find(this.selector)
+        .map(function () {
+          var $el   = $(this)
+          var href  = $el.data('target') || $el.attr('href')
+          var $href = /^#./.test(href) && $(escapeSelector(href)) // Need to escape selector.
+
+          return ($href
+            && $href.length
+            && $href.is(':visible')
+            && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+        })
+        .sort(function (a, b) { return a[0] - b[0] })
+        .each(function () {
+          that.offsets.push(this[0])
+          that.targets.push(this[1])
+        })
+
+
+    }
+
+    ScrollSpy.prototype.process = function () {
+      var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+      var scrollHeight = this.getScrollHeight()
+      var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+      var offsets      = this.offsets
+      var targets      = this.targets
+      var activeTarget = this.activeTarget
+      var i
+
+      if (this.scrollHeight != scrollHeight) {
+        this.refresh()
+      }
+
+      if (scrollTop >= maxScroll) {
+        return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+      }
+
+      if (activeTarget && scrollTop < offsets[0]) {
+        $(this.selector).trigger('clear.bs.scrollspy')  // Add a custom event.
+        this.activeTarget = null
+        return this.clear()
+      }
+
+      for (i = offsets.length; i--;) {
+        activeTarget != targets[i]
+          && scrollTop >= offsets[i]
+          && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+          && this.activate(targets[i])
+      }
+    }
+
+    ScrollSpy.prototype.activate = function (target) {
+      this.activeTarget = target
+
+      this.clear()
+
+      var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href="' + target + '"]'
+
+      var active = $(selector)
+        .parents('li')
+        .addClass('active')
+
+      if (active.parent('.dropdown-menu').length) {
+        active = active
+          .closest('li.dropdown')
+          .addClass('active')
+      }
+
+      active.trigger('activate.bs.scrollspy')
+    }
+
+    ScrollSpy.prototype.clear = function () {
+      $(this.selector)
+        .parentsUntil(this.options.target, '.active')
+        .removeClass('active')
+    }
+
+
+    // SCROLLSPY PLUGIN DEFINITION
+    // ===========================
+
+    function Plugin(option) {
+      return this.each(function () {
+        var $this   = $(this)
+        var data    = $this.data('bs.scrollspy')
+        var options = typeof option == 'object' && option
+
+        if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+        if (typeof option == 'string') data[option]()
+      })
+    }
+
+    var old = $.fn.scrollspy
+
+    $.fn.scrollspy             = Plugin
+    $.fn.scrollspy.Constructor = ScrollSpy
+
+
+    // SCROLLSPY NO CONFLICT
+    // =====================
+
+    $.fn.scrollspy.noConflict = function () {
+      $.fn.scrollspy = old
+      return this
+    }
+
+
+    // SCROLLSPY DATA-API
+    // ==================
+
+    $(window).on('load.bs.scrollspy.data-api', function () {
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this)
+        Plugin.call($spy, $spy.data())
+      })
+    })
+
+  }(jQuery);
+</script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      $tocSelector.scrollPager({
+        max: getTOCMaxHeight()
+      });
+    }
+
+    function getTOCMaxHeight () {
+      // TODO: Make it beautiful
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+        parseInt($sidebarInner.css('padding-top'), 10) -
+        parseInt($sidebarInner.css('padding-bottom'), 10) -
+        $('.sidebar-nav').height() -
+        parseInt($tocSelector.css('margin-top'), 10) -
+        parseInt($tocSelector.css('margin-bottom'), 10);
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+      });
+    }
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      if ($('.post-toc').html().trim().length > 0 && isDesktop()) {
+        setTimeout(function () {
+          $('.sidebar-toggle').trigger('click');
+        }, 800);
+      }
+    });
+  </script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+  
+</body>
+</html>
